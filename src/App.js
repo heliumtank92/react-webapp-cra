@@ -12,18 +12,17 @@ import DsNotistackAlert from './DesignSystem/Components/DsNotistackAlert'
 
 import getAppRouter from 'src/Configurations/getAppRouter'
 import getTheme from 'src/DesignSystem/Theme'
+
 import {
-  initAppMetaFetchAction,
-  completeAppMetaFetchAction,
   setAppMetaAction,
   setAppMetaModeAction,
-  setAppMetaminimumLoaderTimeCompletedAction,
+  setAppMetaMinimumLoaderTimeCompletedAction
+} from 'src/Redux/AppMeta/Actions'
+import { getAppMetaReducer } from 'src/Redux/AppMeta/Selectors'
+import { getServiceSelector } from 'src/Redux/ServiceTracker/Selectors'
+import fetchAppMetaServiceAction, { fetchAppMetaServiceName } from 'src/Redux/AppMeta/Services/fetchAppMeta.Service'
 
-  getReducer as getAppMetaReducer
-} from './Reducers/AppMeta'
-
-import getAppConfig from 'src/Services/AppConfig/getAppConfig'
-import performHandshake from './Services/AppConfig/performHandshake'
+import performHandshake from 'src/Services/performHandshake'
 import AppInitError from './Components/AppInitError'
 
 class App extends Component {
@@ -52,18 +51,17 @@ class App extends Component {
     this.setState({ hasError: false }, async () => {
       const { actions, minimumLoaderTime } = this.props
       try {
-        actions.initAppMetaFetchAction()
         setTimeout(
-          () => { actions.setAppMetaminimumLoaderTimeCompletedAction() },
+          () => { actions.setAppMetaMinimumLoaderTimeCompletedAction() },
           minimumLoaderTime
         )
         await performHandshake()
-        const appConfig = await getAppConfig()
+        const appConfig = await actions.fetchAppMetaServiceAction()
         actions.setAppMetaAction(appConfig)
         actions.completeAppMetaFetchAction()
       } catch (error) {
         this.setState({ hasError: true })
-        actions.completeAppMetaFetchAction()
+        // actions.completeAppMetaFetchAction()
       }
     })
   }
@@ -115,14 +113,20 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = getAppMetaReducer
+const mapStateToProps = (state) => {
+  const appMeta = getAppMetaReducer(state)
+  const isLoading = (getServiceSelector(state, fetchAppMetaServiceName) === 'LOADING')
+  return {
+    isLoading,
+    ...appMeta
+  }
+}
 
 const mapDispatchToProps = (dispatch) => (
   {
     actions: {
-      initAppMetaFetchAction: () => dispatch(initAppMetaFetchAction()),
-      completeAppMetaFetchAction: () => dispatch(completeAppMetaFetchAction()),
-      setAppMetaminimumLoaderTimeCompletedAction: () => dispatch(setAppMetaminimumLoaderTimeCompletedAction()),
+      fetchAppMetaServiceAction: () => dispatch(fetchAppMetaServiceAction()),
+      setAppMetaMinimumLoaderTimeCompletedAction: () => dispatch(setAppMetaMinimumLoaderTimeCompletedAction()),
       setAppMetaAction: (palette) => dispatch(setAppMetaAction(palette)),
       setAppMetaModeAction: (mode) => dispatch(setAppMetaModeAction(mode))
     }

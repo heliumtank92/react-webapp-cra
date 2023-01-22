@@ -3,7 +3,7 @@ import getColorSchemes from './colorSchemes'
 import getTypography from './typography'
 import breakpoints from './breakpoints'
 import getComponents from './components'
-import { SPACE_COEFICIENT } from './spacing'
+import { SPACE_COEFFICIENT } from './spacing'
 
 export default function getTheme (colorPalette, fontFamilyName = '') {
   const colorSchemes = getColorSchemes(colorPalette)
@@ -16,9 +16,10 @@ export default function getTheme (colorPalette, fontFamilyName = '') {
     breakpoints,
     colorSchemes,
     typography,
-    spacing: (input) => input * SPACE_COEFICIENT
+    spacing: (input) => input * SPACE_COEFFICIENT
   }
 
   const theme = extendTheme(themeConfig, themeConfig)
+  window.theme = theme
   return theme
 }

@@ -40,11 +40,7 @@ class AlertMessage extends Component {
 
   render () {
     const { forwardedRef, messageOptions } = this.props
-    const {
-      variant,
-      severity,
-      message
-    } = messageOptions
+    const { variant, severity, message } = messageOptions
 
     return (
       <Alert
@@ -61,11 +57,9 @@ class AlertMessage extends Component {
 
 const NotistackAlert = withSnackbar(AlertMessage)
 
-const DsNotistackAlert = React.forwardRef(
-  (props, ref) => {
-    return <NotistackAlert forwardedRef={ref} messageOptions={props.options} />
-  }
-)
+const DsNotistackAlert = React.forwardRef((props, ref) => {
+  return <NotistackAlert forwardedRef={ref} messageOptions={props.options} />
+})
 
 export default DsNotistackAlert
 

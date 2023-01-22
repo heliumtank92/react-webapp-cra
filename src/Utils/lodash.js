@@ -16,7 +16,6 @@ import _random from 'lodash/random'
 import _pick from 'lodash/pick'
 import _split from 'lodash/split'
 import _replace from 'lodash/replace'
-import _min from 'lodash/min'
 import _repeat from 'lodash/repeat'
 import _padEnd from 'lodash/padEnd'
 import _camelCase from 'lodash/camelCase'
@@ -24,6 +23,8 @@ import _cloneDeep from 'lodash/cloneDeep'
 import _startsWith from 'lodash/startsWith'
 import _differenceBy from 'lodash/differenceBy'
 import _times from 'lodash/times'
+import _max from 'lodash/max'
+import _min from 'lodash/min'
 
 const _isEmptyJSON = (value) => (_isObject(value) && !_isArray(value) && _isEmpty(value))
 
@@ -46,7 +47,6 @@ export {
   _pick,
   _split,
   _replace,
-  _min,
   _repeat,
   _padEnd,
   _camelCase,
@@ -54,7 +54,8 @@ export {
   _startsWith,
   _differenceBy,
   _times,
+  _max,
+  _min,
 
   _isEmptyJSON
-
 }

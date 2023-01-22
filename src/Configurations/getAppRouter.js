@@ -64,7 +64,6 @@ const Page404Page = React.lazy(
 
 const ExamplesPage = React.lazy(() => import('src/DesignSystem/Examples'))
 
-console.log(NAV_LINKS)
 const DEFAULT_LOGGED_IN_ROUTE = NAV_LINKS.AUTH.HOME
 const DEFAULT_NOT_LOGGED_IN_ROUTE = NAV_LINKS.UNAUTH.LOGIN
 

@@ -20,7 +20,8 @@ class ExamplesDialog extends PureComponent {
     this.handleDoubleButtonOpen = this.handleDoubleButtonOpen.bind(this)
     this.handleTripleButtonOpen = this.handleTripleButtonOpen.bind(this)
     this.handleFlushedButtonOpen = this.handleFlushedButtonOpen.bind(this)
-    this.handleFlushedTripleButtonOpen = this.handleFlushedTripleButtonOpen.bind(this)
+    this.handleFlushedTripleButtonOpen =
+      this.handleFlushedTripleButtonOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
   }
 
@@ -71,7 +72,9 @@ class ExamplesDialog extends PureComponent {
             <Button onClick={this.handleDoubleButtonOpen}>Double</Button>
             <Button onClick={this.handleTripleButtonOpen}>Triple</Button>
             <Button onClick={this.handleFlushedButtonOpen}>Flushed</Button>
-            <Button onClick={this.handleFlushedTripleButtonOpen}>Flushed Triple</Button>
+            <Button onClick={this.handleFlushedTripleButtonOpen}>
+              Flushed Triple
+            </Button>
           </Stack>
 
           <DsDialogue
@@ -81,24 +84,40 @@ class ExamplesDialog extends PureComponent {
             onClose={this.handleClose}
             textOnly
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
+            nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at
+            quam. Neque orci arcu amet. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor
+            diam maecenas eget at quam. Neque orci arcu amet. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl
+            in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu
+            amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget
+            at quam. Neque orci arcu amet. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac
+            vitae tempor diam maecenas eget at quam. Neque orci arcu amet. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo
+            rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque
+            orci arcu amet. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas
+            eget at quam. Neque orci arcu amet. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac
+            vitae tempor diam maecenas eget at quam. Neque orci arcu amet. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo
+            rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque
+            orci arcu amet. Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas
+            eget at quam. Neque orci arcu amet. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac
+            vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
           </DsDialogue>
           <DsDialogue
             open={doubleButtonOpen}
             headerText='Flushed Button'
             primaryActionButton={<Button>Primary Action</Button>}
-            secondaryActionButton={<Button color='secondary'>Secondary Action</Button>}
+            secondaryActionButton={
+              <Button color='secondary'>Secondary Action</Button>
+            }
             onClose={this.handleClose}
           >
             Flushed Button
@@ -107,7 +126,9 @@ class ExamplesDialog extends PureComponent {
             open={doubleButtonOpen}
             headerText='Flushed Button'
             primaryActionButton={<Button>Primary Action</Button>}
-            secondaryActionButton={<Button color='secondary'>Secondary Action</Button>}
+            secondaryActionButton={
+              <Button color='secondary'>Secondary Action</Button>
+            }
             onClose={this.handleClose}
           >
             Flushed Button
@@ -116,13 +137,21 @@ class ExamplesDialog extends PureComponent {
             open={tripleButtonOpen}
             headerText='Flushed Button'
             primaryActionButton={<Button>Primary Action</Button>}
-            secondaryActionButton={<Button color='secondary'>Secondary Action</Button>}
+            secondaryActionButton={
+              <Button color='secondary'>Secondary Action</Button>
+            }
             tertiaryActionComponennt={
               <Typography variant='supportRegularInfo'>
                 By choosing to agree, I agree to accept all applicable
-                <Typography variant='inherit' component='span' color='primary'> Terms & Conditions </Typography>
+                <Typography variant='inherit' component='span' color='primary'>
+                  {' '}
+                  Terms & Conditions{' '}
+                </Typography>
                 and
-                <Typography variant='inherit' component='span' color='primary'> Privacy Policy</Typography>
+                <Typography variant='inherit' component='span' color='primary'>
+                  {' '}
+                  Privacy Policy
+                </Typography>
                 .
               </Typography>
             }
@@ -145,9 +174,15 @@ class ExamplesDialog extends PureComponent {
             tertiaryActionComponennt={
               <Typography variant='supportRegularInfo'>
                 By choosing to agree, I agree to accept all applicable
-                <Typography variant='inherit' component='span' color='primary'> Terms & Conditions </Typography>
+                <Typography variant='inherit' component='span' color='primary'>
+                  {' '}
+                  Terms & Conditions{' '}
+                </Typography>
                 and
-                <Typography variant='inherit' component='span' color='primary'> Privacy Policy</Typography>
+                <Typography variant='inherit' component='span' color='primary'>
+                  {' '}
+                  Privacy Policy
+                </Typography>
                 .
               </Typography>
             }
@@ -163,8 +198,6 @@ class ExamplesDialog extends PureComponent {
 
 export default ExamplesDialog
 
-ExamplesDialog.propTypes = {
-}
+ExamplesDialog.propTypes = {}
 
-ExamplesDialog.defaultProps = {
-}
+ExamplesDialog.defaultProps = {}

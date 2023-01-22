@@ -27,41 +27,35 @@ class ExamplesTextField extends PureComponent {
               <DsTextField
                 label='Default'
                 endAdornment={
-                  <InputAdornment position='end' onClick={this.handleTogglePassword}>
-                    {
-                      this.state.passwordVisible
-                        ? <VisibilityOff
-                            onClick={this.handleTogglePassword}
-                            onMouseDown={this.handleTogglePassword}
-                          />
-                        : <Visibility
-                            onClick={this.handleTogglePassword}
-                            onMouseDown={this.handleTogglePassword}
-                          />
-                    }
+                  <InputAdornment
+                    position='end'
+                    onClick={this.handleTogglePassword}
+                  >
+                    {this.state.passwordVisible
+                      ? (
+                        <VisibilityOff
+                          onClick={this.handleTogglePassword}
+                          onMouseDown={this.handleTogglePassword}
+                        />
+                        )
+                      : (
+                        <Visibility
+                          onClick={this.handleTogglePassword}
+                          onMouseDown={this.handleTogglePassword}
+                        />
+                        )}
                   </InputAdornment>
                 }
               />
             </Grid>
             <Grid item xs={12}>
-              <DsTextField
-                label='Filling'
-                autoFocus
-              />
+              <DsTextField label='Filling' autoFocus />
             </Grid>
             <Grid item xs={12}>
-              <DsTextField
-                label='Error'
-                helperText='Some error'
-                error
-              />
+              <DsTextField label='Error' helperText='Some error' error />
             </Grid>
             <Grid item xs={12}>
-              <DsTextField
-                label='Success'
-                helperText='Success text'
-                success
-              />
+              <DsTextField label='Success' helperText='Success text' success />
             </Grid>
             <Grid item xs={12}>
               <DsTextField
@@ -87,11 +81,9 @@ class ExamplesTextField extends PureComponent {
                 readOnly
               />
             </Grid>
-
           </Grid>
         </Paper>
       </>
-
     )
   }
 }

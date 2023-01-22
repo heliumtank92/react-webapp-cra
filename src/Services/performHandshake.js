@@ -1,5 +1,4 @@
 import * as webHttps from 'src/Configurations/WebHttp'
-import { AS_HANDSHAKE_URL } from './SERVICE_URLS'
 
 const performHandshake = async () => {
   const promises = Object.values(webHttps).map(handdshake)
@@ -12,8 +11,10 @@ const performHandshake = async () => {
 }
 
 const handdshake = async (webHttp) => {
+  if (!webHttp) { return }
+
   const options = {
-    url: AS_HANDSHAKE_URL,
+    url: '/handshake',
     method: 'GET'
   }
 
@@ -27,6 +28,7 @@ const handdshake = async (webHttp) => {
     const { publicKey } = data
     webHttp.context.set('PUBLIC_KEY', publicKey)
   } catch (err) {
+    console.log(err)
     throw err
   }
 }

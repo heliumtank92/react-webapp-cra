@@ -12,7 +12,7 @@ export default class AppInitError extends PureComponent {
     initialize: PropTypes.func.isRequired
   }
 
-  render() {
+  render () {
     return (
       <Stack spacing={dsSpacing.mild}>
         <Typography>Something Went Wrong! Please Try Again</Typography>

@@ -1,12 +1,12 @@
-const SPACE_COEFICIENT = 4
+const SPACE_COEFFICIENT = 4
 
 const dsSpacingCssVars = {
   zero: 0,
-  deepfreeze: 2,
-  quickfreeze: 4,
+  deepFreeze: 2,
+  quickFreeze: 4,
   glacial: 8,
   frostbite: 12,
-  bittercold: 16,
+  bitterCold: 16,
   cool: 20,
   mild: 24,
   pleasant: 28,
@@ -18,36 +18,36 @@ const dsSpacingCssVars = {
   molten: 64,
   superheated: 80,
   meltdown: 96,
-  whitehot: 112,
+  whiteHot: 112,
   plasma: 128
 }
 
 const dsSpacing = {
-  zero: dsSpacingCssVars.zero / SPACE_COEFICIENT,
-  deepfreeze: dsSpacingCssVars.deepfreeze / SPACE_COEFICIENT,
-  quickfreeze: dsSpacingCssVars.quickfreeze / SPACE_COEFICIENT,
-  glacial: dsSpacingCssVars.glacial / SPACE_COEFICIENT,
-  frostbite: dsSpacingCssVars.frostbite / SPACE_COEFICIENT,
-  bittercold: dsSpacingCssVars.bittercold / SPACE_COEFICIENT,
-  cool: dsSpacingCssVars.cool / SPACE_COEFICIENT,
-  mild: dsSpacingCssVars.mild / SPACE_COEFICIENT,
-  pleasant: dsSpacingCssVars.pleasant / SPACE_COEFICIENT,
-  warm: dsSpacingCssVars.warm / SPACE_COEFICIENT,
-  tepid: dsSpacingCssVars.tepid / SPACE_COEFICIENT,
-  tropical: dsSpacingCssVars.tropical / SPACE_COEFICIENT,
-  hot: dsSpacingCssVars.hot / SPACE_COEFICIENT,
-  blazing: dsSpacingCssVars.blazing / SPACE_COEFICIENT,
-  molten: dsSpacingCssVars.molten / SPACE_COEFICIENT,
-  superheated: dsSpacingCssVars.superheated / SPACE_COEFICIENT,
-  meltdown: dsSpacingCssVars.meltdown / SPACE_COEFICIENT,
-  whitehot: dsSpacingCssVars.whitehot / SPACE_COEFICIENT,
-  plasma: dsSpacingCssVars.plasma / SPACE_COEFICIENT
+  zero: dsSpacingCssVars.zero / SPACE_COEFFICIENT,
+  deepFreeze: dsSpacingCssVars.deepFreeze / SPACE_COEFFICIENT,
+  quickFreeze: dsSpacingCssVars.quickFreeze / SPACE_COEFFICIENT,
+  glacial: dsSpacingCssVars.glacial / SPACE_COEFFICIENT,
+  frostbite: dsSpacingCssVars.frostbite / SPACE_COEFFICIENT,
+  bitterCold: dsSpacingCssVars.bitterCold / SPACE_COEFFICIENT,
+  cool: dsSpacingCssVars.cool / SPACE_COEFFICIENT,
+  mild: dsSpacingCssVars.mild / SPACE_COEFFICIENT,
+  pleasant: dsSpacingCssVars.pleasant / SPACE_COEFFICIENT,
+  warm: dsSpacingCssVars.warm / SPACE_COEFFICIENT,
+  tepid: dsSpacingCssVars.tepid / SPACE_COEFFICIENT,
+  tropical: dsSpacingCssVars.tropical / SPACE_COEFFICIENT,
+  hot: dsSpacingCssVars.hot / SPACE_COEFFICIENT,
+  blazing: dsSpacingCssVars.blazing / SPACE_COEFFICIENT,
+  molten: dsSpacingCssVars.molten / SPACE_COEFFICIENT,
+  superheated: dsSpacingCssVars.superheated / SPACE_COEFFICIENT,
+  meltdown: dsSpacingCssVars.meltdown / SPACE_COEFFICIENT,
+  whiteHot: dsSpacingCssVars.whiteHot / SPACE_COEFFICIENT,
+  plasma: dsSpacingCssVars.plasma / SPACE_COEFFICIENT
 }
 
-export { SPACE_COEFICIENT, dsSpacingCssVars, getSpacingPX }
+export { SPACE_COEFFICIENT, dsSpacingCssVars, getSpacingPX }
 
 export default dsSpacing
 
-function getSpacingPX (multipler) {
-  return `${SPACE_COEFICIENT * multipler}px`
+function getSpacingPX (multiplier) {
+  return `${SPACE_COEFFICIENT * multiplier}px`
 }

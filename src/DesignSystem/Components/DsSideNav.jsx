@@ -44,7 +44,9 @@ export default class DsSideNav extends PureComponent {
           key={title}
           disablePadding
           sx={{ display: 'block' }}
-          onClick={() => { onNavlinkClick(navLink) }}
+          onClick={() => {
+            onNavlinkClick(navLink)
+          }}
         >
           <ListItemButton
             dsVariant='mini-drawer'
@@ -62,9 +64,7 @@ export default class DsSideNav extends PureComponent {
             >
               <Icon />
             </ListItemIcon>
-            <ListItemText
-              primary={title}
-            />
+            <ListItemText primary={title} />
           </ListItemButton>
         </ListItem>
       )
@@ -72,34 +72,24 @@ export default class DsSideNav extends PureComponent {
   }
 
   getDrawer () {
-    const {
-      open,
-      onDrawerclose,
-      navLinks,
-      onNavlinkClick,
-      ...drawerProps
-    } = this.props
+    const { open, onDrawerclose, navLinks, onNavlinkClick, ...drawerProps } =
+      this.props
 
     return (
-      <Drawer
-        {...drawerProps}
-        open={open}
-        onClose={onDrawerclose}
-      >
-        <Toolbar sx={{
-          width: DRAWER_WIDTH,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end'
-        }}
+      <Drawer {...drawerProps} open={open} onClose={onDrawerclose}>
+        <Toolbar
+          sx={{
+            width: DRAWER_WIDTH,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end'
+          }}
         >
           <IconButton variant='app-bar' onClick={onDrawerclose}>
             <ChevronLeftIcon />
           </IconButton>
         </Toolbar>
-        <List sx={{ width: DRAWER_WIDTH }}>
-          {this.renderNavLinks()}
-        </List>
+        <List sx={{ width: DRAWER_WIDTH }}>{this.renderNavLinks()}</List>
       </Drawer>
     )
   }

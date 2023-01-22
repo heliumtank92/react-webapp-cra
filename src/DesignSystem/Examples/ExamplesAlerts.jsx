@@ -57,8 +57,6 @@ class ExamplesAlerts extends PureComponent {
 
 export default ExamplesAlerts
 
-ExamplesAlerts.propTypes = {
-}
+ExamplesAlerts.propTypes = {}
 
-ExamplesAlerts.defaultProps = {
-}
+ExamplesAlerts.defaultProps = {}

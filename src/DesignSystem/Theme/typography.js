@@ -11,120 +11,171 @@ export default function getTypography (fontFamilyName = '') {
     fontsizeMild: '24px',
     fontsizeCool: '20px',
     fontsizeCold: '18px',
-    fontsizeBittercold: '16px',
+    fontsizeBitterCold: '16px',
     fontsizeFrigid: '14px',
     fontsizeFrostbite: '12px',
     fontsizeBlizzard: '11px',
-    fontsizeIceage: '10px',
+    fontsizeIceAge: '10px',
 
-    fontweightRegular: 400,
-    fontweightSemibold: 600,
-    fontweightBold: 700,
-    fontweightBolditalic: 700,
+    fontWeightRegular: 400,
+    fontWeightSemibold: 600,
+    fontWeightBold: 700,
+    fontWeightBoldItalic: 700,
 
-    lineheightIceage: '10px',
-    lineheightGlacial: '8px',
-    lineheightGelid: '6px',
-    lineheightQuickfreeze: '4px',
-    lineheightDeepfreeze: '2px',
-    lineheightZero: '0px',
+    lineHeightIceAge: '10px',
+    lineHeightGlacial: '8px',
+    lineHeightGelid: '6px',
+    lineHeightQuickFreeze: '4px',
+    lineHeightDeepfreeze: '2px',
+    lineHeightZero: '0px',
 
-    characterspacingArctic: 1,
-    characterspacingAlps: 0.32,
-    characterspacingHindukush: 0.24,
-    characterspacingHimalayas: 0.16,
-    characterspacingZero: 0,
+    characterSpacingArctic: 1,
+    characterSpacingAlps: 0.32,
+    characterSpacingHindukush: 0.24,
+    characterSpacingHimalayas: 0.16,
+    characterSpacingZero: 0,
 
-    paragraphspacing: '0px',
+    paragraphSpacing: '0px',
     casingUppercase: 'uppercase',
     casingNone: 'none'
   }
 
   const dsTypoComposite = {
-    headingBoldExtralarge: {
-      fontWeight: dsTypoPrimitive.fontweightBold,
+    headingBoldExtraLarge: {
+      fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontsizeWarm,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeWarm, dsTypoPrimitive.lineheightIceage)
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeWarm,
+        dsTypoPrimitive.lineHeightIceAge
+      )
     },
     headingBoldLarge: {
-      fontWeight: dsTypoPrimitive.fontweightBold,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontsizeMild,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeMild, dsTypoPrimitive.lineheightGlacial),
-      letterSpacing: dsTypoPrimitive.characterspacingZero
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeMild,
+        dsTypoPrimitive.lineHeightGlacial
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     headingBoldMedium: {
-      fontWeight: dsTypoPrimitive.fontweightBold,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontsizeCool,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeCool, dsTypoPrimitive.lineheightGelid),
-      letterSpacing: dsTypoPrimitive.characterspacingHimalayas
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeCool,
+        dsTypoPrimitive.lineHeightGelid
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldSmall: {
-      fontWeight: dsTypoPrimitive.fontweightBold,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontsizeCold,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeCold, dsTypoPrimitive.lineheightGelid),
-      letterSpacing: dsTypoPrimitive.characterspacingHimalayas
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeCold,
+        dsTypoPrimitive.lineHeightGelid
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
-    headingBoldExtrasmall: {
-      fontWeight: dsTypoPrimitive.fontweightBold,
-      fontSize: dsTypoPrimitive.fontsizeBittercold,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeBittercold, dsTypoPrimitive.lineheightQuickfreeze),
-      letterSpacing: dsTypoPrimitive.characterspacingHimalayas
+    headingBoldExtraSmall: {
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontsizeBitterCold,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeBitterCold,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     subheadingSemiboldLarge: {
-      fontWeight: dsTypoPrimitive.fontweightSemibold,
+      fontWeight: dsTypoPrimitive.fontWeightSemibold,
       fontSize: dsTypoPrimitive.fontsizeFrigid,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrigid, dsTypoPrimitive.lineheightQuickfreeze),
-      letterSpacing: dsTypoPrimitive.characterspacingHindukush
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrigid,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     subheadingSemiboldDefault: {
-      fontWeight: dsTypoPrimitive.fontweightSemibold,
+      fontWeight: dsTypoPrimitive.fontWeightSemibold,
       fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrostbite, dsTypoPrimitive.lineheightQuickfreeze),
-      letterSpacing: dsTypoPrimitive.characterspacingHindukush
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrostbite,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyRegularLarge: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeBittercold,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeBittercold, dsTypoPrimitive.lineheightGlacial),
-      letterSpacing: dsTypoPrimitive.characterspacingHimalayas
+      fontSize: dsTypoPrimitive.fontsizeBitterCold,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeBitterCold,
+        dsTypoPrimitive.lineHeightGlacial
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     bodyRegularMedium: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontsizeFrigid,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrigid, dsTypoPrimitive.lineheightGelid),
-      letterSpacing: dsTypoPrimitive.characterspacingHindukush
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrigid,
+        dsTypoPrimitive.lineHeightGelid
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyRegularSmall: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrostbite, dsTypoPrimitive.lineheightGelid),
-      letterSpacing: dsTypoPrimitive.characterspacingAlps
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrostbite,
+        dsTypoPrimitive.lineHeightGelid
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
-    supportBoldTextbutton: {
-      fontWeight: dsTypoPrimitive.fontweightBold,
+    bodyBoldMedium: {
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontsizeFrigid,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrigid,
+        dsTypoPrimitive.lineHeightGelid
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
+    },
+    supportBoldTextButton: {
+      fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrostbite, dsTypoPrimitive.lineheightZero),
-      letterSpacing: dsTypoPrimitive.characterspacingArctic,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrostbite,
+        dsTypoPrimitive.lineHeightZero
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingArctic,
       textTransform: dsTypoPrimitive.casingUppercase
     },
     supportRegularInfo: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontsizeBlizzard,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrostbite, dsTypoPrimitive.lineheightQuickfreeze),
-      letterSpacing: dsTypoPrimitive.characterspacingAlps,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrostbite,
+        dsTypoPrimitive.lineHeightQuickFreeze
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps,
       textTransform: dsTypoPrimitive.casingNone
     },
     supportRegularFootnote: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeIceage,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeIceage, dsTypoPrimitive.lineheightDeepfreeze),
-      letterSpacing: dsTypoPrimitive.characterspacingAlps
+      fontSize: dsTypoPrimitive.fontsizeIceAge,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeIceAge,
+        dsTypoPrimitive.lineHeightDeepfreeze
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
     supportRegularMetadata: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(dsTypoPrimitive.fontsizeFrostbite, dsTypoPrimitive.lineheightZero),
-      letterSpacing: dsTypoPrimitive.characterspacingAlps,
+      lineHeight: calculateLinerHeight(
+        dsTypoPrimitive.fontsizeFrostbite,
+        dsTypoPrimitive.lineHeightZero
+      ),
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps,
       textTransform: dsTypoPrimitive.casingUppercase
     }
   }
@@ -141,17 +192,18 @@ export default function getTypography (fontFamilyName = '') {
     fontWeightRegular: dsTypo.fontWeightRegular,
     fontWeightMedium: dsTypo.fontWeightMedium,
     fontWeightBold: dsTypo.fontWeightBold,
-    headingBoldExtralarge: dsTypo.headingBoldExtralarge,
+    headingBoldExtraLarge: dsTypo.headingBoldExtraLarge,
     headingBoldLarge: dsTypo.headingBoldLarge,
     headingBoldMedium: dsTypo.headingBoldMedium,
     headingBoldSmall: dsTypo.headingBoldSmall,
-    headingBoldExtrasmall: dsTypo.headingBoldExtrasmall,
+    bodyBoldMedium: dsTypo.bodyBoldMedium,
+    headingBoldExtraSmall: dsTypo.headingBoldExtraSmall,
     subheadingSemiboldLarge: dsTypo.subheadingSemiboldLarge,
     subheadingSemiboldDefault: dsTypo.subheadingSemiboldDefault,
     bodyRegularLarge: dsTypo.bodyRegularLarge,
     bodyRegularMedium: dsTypo.bodyRegularMedium,
     bodyRegularSmall: dsTypo.bodyRegularSmall,
-    supportBoldTextbutton: dsTypo.supportBoldTextbutton,
+    supportBoldTextButton: dsTypo.supportBoldTextButton,
     supportRegularInfo: dsTypo.supportRegularInfo,
     supportRegularFootnote: dsTypo.supportRegularFootnote,
     supportRegularMetadata: dsTypo.supportRegularMetadata

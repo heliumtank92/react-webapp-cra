@@ -41,11 +41,36 @@ class ExamplesChips extends PureComponent {
         </Grid>
         <Grid item>
           <DsChipGroup>
-            <Chip type='nudge' icon={<StarIcon />} label='Default' color='default' />
-            <Chip type='nudge' icon={<StarIcon />} label='Success' color='success' />
-            <Chip type='nudge' icon={<StarIcon />} label='Warning' color='warning' />
-            <Chip type='nudge' icon={<StarIcon />} label='Pending' color='pending' />
-            <Chip type='nudge' icon={<StarIcon />} label='Error' color='error' />
+            <Chip
+              type='nudge'
+              icon={<StarIcon />}
+              label='Default'
+              color='default'
+            />
+            <Chip
+              type='nudge'
+              icon={<StarIcon />}
+              label='Success'
+              color='success'
+            />
+            <Chip
+              type='nudge'
+              icon={<StarIcon />}
+              label='Warning'
+              color='warning'
+            />
+            <Chip
+              type='nudge'
+              icon={<StarIcon />}
+              label='Pending'
+              color='pending'
+            />
+            <Chip
+              type='nudge'
+              icon={<StarIcon />}
+              label='Error'
+              color='error'
+            />
             <Chip type='nudge' icon={<StarIcon />} label='Info' color='info' />
           </DsChipGroup>
         </Grid>
@@ -56,8 +81,6 @@ class ExamplesChips extends PureComponent {
 
 export default ExamplesChips
 
-ExamplesChips.propTypes = {
-}
+ExamplesChips.propTypes = {}
 
-ExamplesChips.defaultProps = {
-}
+ExamplesChips.defaultProps = {}

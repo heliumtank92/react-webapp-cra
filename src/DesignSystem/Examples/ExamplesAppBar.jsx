@@ -6,9 +6,15 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { IconButton, Avatar } from '@mui/material'
 
 const rightActions = [
-  <IconButton key='0'><MenuIcon /></IconButton>,
-  <IconButton key='1'><MenuIcon /></IconButton>,
-  <IconButton key='2'><Avatar /></IconButton>
+  <IconButton key='0'>
+    <MenuIcon />
+  </IconButton>,
+  <IconButton key='1'>
+    <MenuIcon />
+  </IconButton>,
+  <IconButton key='2'>
+    <Avatar />
+  </IconButton>
 ]
 
 class ExamplesAppBar extends PureComponent {
@@ -19,7 +25,11 @@ class ExamplesAppBar extends PureComponent {
           <Grid item xs={7}>
             <DsAppBar
               position='static'
-              leftIcon={<IconButton><MenuIcon /></IconButton>}
+              leftIcon={
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+              }
               content='Lorem Ipsum'
               rightActions={rightActions}
             />
@@ -28,7 +38,11 @@ class ExamplesAppBar extends PureComponent {
             <DsAppBar
               position='static'
               color='primary'
-              leftIcon={<IconButton><MenuIcon /></IconButton>}
+              leftIcon={
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+              }
               content='Lorem Ipsum'
               rightActions={rightActions}
             />
@@ -41,8 +55,6 @@ class ExamplesAppBar extends PureComponent {
 
 export default ExamplesAppBar
 
-ExamplesAppBar.propTypes = {
-}
+ExamplesAppBar.propTypes = {}
 
-ExamplesAppBar.defaultProps = {
-}
+ExamplesAppBar.defaultProps = {}

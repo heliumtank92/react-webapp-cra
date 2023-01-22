@@ -9,22 +9,34 @@ class ExamplesAvatars extends PureComponent {
     return (
       <Grid container spacing={2}>
         <Grid item>
-          <Avatar size='S' src={avatarImage}>A</Avatar>
+          <Avatar size='S' src={avatarImage}>
+            A
+          </Avatar>
         </Grid>
         <Grid item>
-          <Avatar size='M' src={avatarImage}>A</Avatar>
+          <Avatar size='M' src={avatarImage}>
+            A
+          </Avatar>
         </Grid>
         <Grid item>
-          <Avatar size='L' src={avatarImage}>A</Avatar>
+          <Avatar size='L' src={avatarImage}>
+            A
+          </Avatar>
         </Grid>
         <Grid item>
-          <Avatar size='XL' src={avatarImage}>A</Avatar>
+          <Avatar size='XL' src={avatarImage}>
+            A
+          </Avatar>
         </Grid>
         <Grid item>
-          <Avatar size='XXL' src={avatarImage}>A</Avatar>
+          <Avatar size='XXL' src={avatarImage}>
+            A
+          </Avatar>
         </Grid>
         <Grid item>
-          <Avatar size='3XL' src={avatarImage}>A</Avatar>
+          <Avatar size='3XL' src={avatarImage}>
+            A
+          </Avatar>
         </Grid>
       </Grid>
     )
@@ -33,8 +45,6 @@ class ExamplesAvatars extends PureComponent {
 
 export default ExamplesAvatars
 
-ExamplesAvatars.propTypes = {
-}
+ExamplesAvatars.propTypes = {}
 
-ExamplesAvatars.defaultProps = {
-}
+ExamplesAvatars.defaultProps = {}

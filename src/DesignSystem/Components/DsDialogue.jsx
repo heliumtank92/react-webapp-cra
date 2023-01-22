@@ -37,28 +37,30 @@ export default class DsDialogue extends PureComponent {
 
     const content = textOnly
       ? (
-        <DialogContentText>
-          {children}
-        </DialogContentText>
+        <DialogContentText>{children}</DialogContentText>
         )
-      : children
+      : (
+          children
+        )
 
-    const flushedButton = (flushedActionButton && React.cloneElement(flushedActionButton, { variant: 'flushed', size: 'medium' }))
-    const primaryButton = (primaryActionButton && React.cloneElement(primaryActionButton, { size: 'medium' }))
-    const secondaryButton = (secondaryActionButton && React.cloneElement(secondaryActionButton, { size: 'medium' }))
+    const flushedButton =
+      flushedActionButton &&
+      React.cloneElement(flushedActionButton, {
+        variant: 'flushed',
+        size: 'medium'
+      })
+    const primaryButton =
+      primaryActionButton &&
+      React.cloneElement(primaryActionButton, { size: 'medium' })
+    const secondaryButton =
+      secondaryActionButton &&
+      React.cloneElement(secondaryActionButton, { size: 'medium' })
 
     return (
-      <Dialog
-        open={open}
-        {...restDialogProps}
-      >
+      <Dialog open={open} {...restDialogProps}>
         <DialogTitle>{headerText}</DialogTitle>
-        <DialogContent textOnly={textOnly}>
-          {content}
-        </DialogContent>
-        <DialogActions
-          disableSpacing
-        >
+        <DialogContent textOnly={textOnly}>{content}</DialogContent>
+        <DialogActions disableSpacing>
           <DsButtonGroup
             disablePadding={!!flushedActionButton}
             primaryActionButton={flushedButton || primaryButton}

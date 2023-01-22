@@ -255,12 +255,7 @@ class ExamplesButtons extends PureComponent {
               </Button>
             </Grid>
             <Grid item xs={6}>
-              <Button
-                variant='text'
-                color='secondary'
-                disabled
-                type='submit'
-              >
+              <Button variant='text' color='secondary' disabled type='submit'>
                 Secondary Disabled
               </Button>
             </Grid>
@@ -269,11 +264,7 @@ class ExamplesButtons extends PureComponent {
         <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
           <Grid container spacing={2}>
             <Grid item xs={4}>
-              <Button
-                variant='contained'
-                fullWidth
-                endIcon={<SendIcon />}
-              >
+              <Button variant='contained' fullWidth endIcon={<SendIcon />}>
                 Send
               </Button>
             </Grid>
@@ -302,11 +293,7 @@ class ExamplesButtons extends PureComponent {
         <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
           <Grid container spacing={2}>
             <Grid item xs={4}>
-              <Button
-                variant='contained'
-                fullWidth
-                startIcon={<SendIcon />}
-              >
+              <Button variant='contained' fullWidth startIcon={<SendIcon />}>
                 Send
               </Button>
             </Grid>
@@ -367,7 +354,6 @@ class ExamplesButtons extends PureComponent {
                   >
                     Close
                   </Button>
-
                 }
               />
             </Grid>
@@ -391,14 +377,27 @@ class ExamplesButtons extends PureComponent {
                   >
                     Close
                   </Button>
-
                 }
                 tertiaryActionComponennt={
                   <Typography variant='supportRegularInfo'>
                     By choosing to agree, I agree to accept all applicable
-                    <Typography variant='inherit' component='span' color='primary'> Terms & Conditions </Typography>
+                    <Typography
+                      variant='inherit'
+                      component='span'
+                      color='primary'
+                    >
+                      {' '}
+                      Terms & Conditions{' '}
+                    </Typography>
                     and
-                    <Typography variant='inherit' component='span' color='primary'> Privacy Policy</Typography>
+                    <Typography
+                      variant='inherit'
+                      component='span'
+                      color='primary'
+                    >
+                      {' '}
+                      Privacy Policy
+                    </Typography>
                     .
                   </Typography>
                 }
@@ -419,9 +418,23 @@ class ExamplesButtons extends PureComponent {
                 tertiaryActionComponennt={
                   <Typography variant='supportRegularInfo'>
                     By choosing to agree, I agree to accept all applicable
-                    <Typography variant='inherit' component='span' color='primary'> Terms & Conditions </Typography>
+                    <Typography
+                      variant='inherit'
+                      component='span'
+                      color='primary'
+                    >
+                      {' '}
+                      Terms & Conditions{' '}
+                    </Typography>
                     and
-                    <Typography variant='inherit' component='span' color='primary'> Privacy Policy</Typography>
+                    <Typography
+                      variant='inherit'
+                      component='span'
+                      color='primary'
+                    >
+                      {' '}
+                      Privacy Policy
+                    </Typography>
                     .
                   </Typography>
                 }

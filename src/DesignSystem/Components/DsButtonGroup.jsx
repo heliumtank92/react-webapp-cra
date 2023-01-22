@@ -38,7 +38,10 @@ export default class DsButtonGroup extends PureComponent {
           sx={{
             color: 'var(--ds-color-typoTertiary)',
             textAlign: 'center',
-            pb: (tertiaryActionComponennt && disablePadding) ? 'var(--ds-spacing-bittercold)' : 'var(--ds-spacing-zero)'
+            pb:
+              tertiaryActionComponennt && disablePadding
+                ? 'var(--ds-spacing-bitterCold)'
+                : 'var(--ds-spacing-zero)'
           }}
         >
           {tertiaryActionComponennt}
@@ -51,7 +54,9 @@ export default class DsButtonGroup extends PureComponent {
             '> button': {
               flex: 1
             },
-            p: disablePadding ? 'var(--ds-spacing-zero)' : 'var(--ds-spacing-bittercold)',
+            p: disablePadding
+              ? 'var(--ds-spacing-zero)'
+              : 'var(--ds-spacing-bitterCold)',
             bgcolor: {
               xs: 'var(--ds-color-surfaceBackground)',
               sm: 'var(--ds-color-surfaceBackground)',
