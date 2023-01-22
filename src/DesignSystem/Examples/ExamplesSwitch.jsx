@@ -8,7 +8,7 @@ class ExamplesSwitch extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      toggleValue: 'No'
+      toggleValue: 'no'
     }
     this.handleChange = this.handleChange.bind(this)
   }
