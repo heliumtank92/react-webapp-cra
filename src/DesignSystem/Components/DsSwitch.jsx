@@ -3,17 +3,24 @@ import PropTypes from 'prop-types'
 import { ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 
 class DsSwitch extends PureComponent {
+  static propTypes = {
+    value: PropTypes.oneOf(['yes', 'no'])
+  }
+
+  static defaultProps = {
+    value: 'no'
+  }
+
   render () {
-    const { value, handleChange, variants, ...restProps } = this.props
+    const { value, ...restProps } = this.props
     return (
       <ToggleButtonGroup
         size='small'
-        value={value && value.toLowerCase()}
         exclusive
-        onChange={handleChange}
+        value={value && value.toLowerCase()}
         {...restProps}
       >
-        <ToggleButton value='yes' color='secondary'>
+        <ToggleButton value='yes' size='inherit' color='secondary'>
           <Typography variant='supportBoldTextButton'>YES</Typography>
         </ToggleButton>
         <ToggleButton value='no' size='inherit' color='secondary'>
@@ -23,7 +30,5 @@ class DsSwitch extends PureComponent {
     )
   }
 }
-
-DsSwitch.propTypes = {}
 
 export default DsSwitch

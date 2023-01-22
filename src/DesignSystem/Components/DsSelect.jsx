@@ -14,6 +14,15 @@ const Placeholder = ({ placeholder }) => {
 }
 
 class DsSelect extends PureComponent {
+  static propTypes = {
+    value: PropTypes.any,
+    placeholder: PropTypes.string,
+    options: PropTypes.any,
+    displayKey: PropTypes.string,
+    helperText: PropTypes.string,
+    error: PropTypes.bool
+  }
+
   render () {
     const {
       value,
@@ -25,6 +34,7 @@ class DsSelect extends PureComponent {
       label,
       ...restProps
     } = this.props
+
     return (
       <FormControl fullWidth>
         <Box pb={2.5}>
@@ -62,16 +72,5 @@ class DsSelect extends PureComponent {
     )
   }
 }
-
-DsSelect.propTypes = {
-  value: PropTypes.any,
-  placeholder: PropTypes.string,
-  options: PropTypes.any,
-  displayKey: PropTypes.string,
-  helperText: PropTypes.string,
-  error: PropTypes.bool
-}
-
-DsSelect.defaultProps = {}
 
 export default DsSelect

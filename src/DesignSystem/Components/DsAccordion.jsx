@@ -4,11 +4,22 @@ import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 class DsAccordion extends PureComponent {
+  static propTypes = {
+    header: PropTypes.node,
+    summary: PropTypes.node,
+    ExpandIcon: PropTypes.node
+  }
+
+  static defaultProps = {
+    ExpandIcon: ExpandMoreIcon
+  }
+
   render () {
-    const { header, summary, expandIcon } = this.props
+    const { header, summary, ExpandIcon } = this.props
+
     return (
       <Accordion>
-        <AccordionSummary expandIcon={expandIcon || <ExpandMoreIcon />}>
+        <AccordionSummary expandIcon={<ExpandIcon />}>
           {header}
         </AccordionSummary>
         <AccordionDetails>{summary}</AccordionDetails>
@@ -16,7 +27,5 @@ class DsAccordion extends PureComponent {
     )
   }
 }
-
-DsAccordion.propTypes = {}
 
 export default DsAccordion

@@ -10,10 +10,10 @@ class ExamplesSwitch extends Component {
     this.state = {
       toggleValue: 'No'
     }
-    this.onChange = this.onChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  onChange (e, val) {
+  handleChange (e, val) {
     if (val) this.setState({ toggleValue: val })
   }
 
@@ -24,7 +24,7 @@ class ExamplesSwitch extends Component {
         <Paper sx={{ p: 6 }}>
           <Grid container spacing={6}>
             <Grid item xs={12}>
-              <DsSwitch value={toggleValue} handleChange={this.onChange} />
+              <DsSwitch value={toggleValue} onChange={this.handleChange} />
             </Grid>
           </Grid>
         </Paper>
