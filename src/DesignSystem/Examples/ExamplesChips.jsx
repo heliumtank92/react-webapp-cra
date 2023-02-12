@@ -1,80 +1,44 @@
 import React, { PureComponent } from 'react'
-// import PropTypes from 'prop-types'
-import { Grid, Chip } from '@mui/material'
-import DsChipGroup from '../Components/DsChipGroup'
-
-import StarIcon from '@mui/icons-material/Star'
+import DsPaper from '../Components/DsPaper'
+import DsStack from '../Components/DsStack'
+import DsChip from '../Components/DsChip'
+import DsRemixIcon from '../Components/DsRemixIcon'
 
 class ExamplesChips extends PureComponent {
   render () {
     return (
-      <Grid direction='column' container spacing={2}>
-        <Grid item>
-          <DsChipGroup>
-            <Chip label='Default' color='default' />
-            <Chip label='Success' color='success' />
-            <Chip label='Warning' color='warning' />
-            <Chip label='Pending' color='pending' />
-            <Chip label='Error' color='error' />
-            <Chip label='Info' color='info' />
-          </DsChipGroup>
-        </Grid>
-        <Grid item>
-          <DsChipGroup>
-            <Chip icon={<StarIcon />} label='Default' color='default' />
-            <Chip icon={<StarIcon />} label='Success' color='success' />
-            <Chip icon={<StarIcon />} label='Warning' color='warning' />
-            <Chip icon={<StarIcon />} label='Pending' color='pending' />
-            <Chip icon={<StarIcon />} label='Error' color='error' />
-            <Chip icon={<StarIcon />} label='Info' color='info' />
-          </DsChipGroup>
-        </Grid>
-        <Grid item>
-          <DsChipGroup>
-            <Chip type='nudge' label='Default' color='default' />
-            <Chip type='nudge' label='Success' color='success' />
-            <Chip type='nudge' label='Warning' color='warning' />
-            <Chip type='nudge' label='Pending' color='pending' />
-            <Chip type='nudge' label='Error' color='error' />
-            <Chip type='nudge' label='Info' color='info' />
-          </DsChipGroup>
-        </Grid>
-        <Grid item>
-          <DsChipGroup>
-            <Chip
-              type='nudge'
-              icon={<StarIcon />}
-              label='Default'
-              color='default'
-            />
-            <Chip
-              type='nudge'
-              icon={<StarIcon />}
-              label='Success'
-              color='success'
-            />
-            <Chip
-              type='nudge'
-              icon={<StarIcon />}
-              label='Warning'
-              color='warning'
-            />
-            <Chip
-              type='nudge'
-              icon={<StarIcon />}
-              label='Pending'
-              color='pending'
-            />
-            <Chip
-              type='nudge'
-              icon={<StarIcon />}
-              label='Error'
-              color='error'
-            />
-            <Chip type='nudge' icon={<StarIcon />} label='Info' color='info' />
-          </DsChipGroup>
-        </Grid>
-      </Grid>
+      <DsPaper sx={{ p: 'var(--ds-spacing-mild)' }}>
+        <DsStack direction='column' spacing='var(--ds-spacing-mild)'>
+          <DsStack direction='row' spacing='var(--ds-spacing-mild)'>
+            <DsChip label='Default' color='default' />
+            <DsChip label='Success' color='success' />
+            <DsChip label='Warning' color='warning' />
+            <DsChip label='Error' color='error' />
+            <DsChip label='Info' color='info' />
+          </DsStack>
+          <DsStack direction='row' spacing='var(--ds-spacing-mild)'>
+            <DsChip icon={<DsRemixIcon className='ri-star-fill' />} label='Default' color='default' />
+            <DsChip icon={<DsRemixIcon className='ri-star-fill' />} label='Success' color='success' />
+            <DsChip icon={<DsRemixIcon className='ri-star-fill' />} label='Warning' color='warning' />
+            <DsChip icon={<DsRemixIcon className='ri-star-fill' />} label='Error' color='error' />
+            <DsChip icon={<DsRemixIcon className='ri-star-fill' />} label='Info' color='info' />
+          </DsStack>
+          <DsStack direction='row' spacing='var(--ds-spacing-mild)'>
+            <DsChip type='nudge' label='Default' color='default' />
+            <DsChip type='nudge' label='Success' color='success' />
+            <DsChip type='nudge' label='Warning' color='warning' />
+            <DsChip type='nudge' label='Error' color='error' />
+            <DsChip type='nudge' label='Info' color='info' />
+          </DsStack>
+          <DsStack direction='row' spacing='var(--ds-spacing-mild)'>
+            <DsChip type='nudge' icon={<DsRemixIcon className='ri-star-fill' />} label='Default' color='default' />
+            <DsChip type='nudge' icon={<DsRemixIcon className='ri-star-fill' />} label='Success' color='success' />
+            <DsChip type='nudge' icon={<DsRemixIcon className='ri-star-fill' />} label='Warning' color='warning' />
+            <DsChip type='nudge' icon={<DsRemixIcon className='ri-star-fill' />} label='Error' color='error' />
+            <DsChip type='nudge' icon={<DsRemixIcon className='ri-star-fill' />} label='Info' color='info' />
+          </DsStack>
+        </DsStack>
+      </DsPaper>
     )
   }
 }

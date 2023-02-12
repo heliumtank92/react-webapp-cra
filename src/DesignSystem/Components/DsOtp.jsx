@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { FormHelperText, Stack, Box, Typography } from '@mui/material'
-import DsTextField from './DsTextField'
 
-import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded'
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
+import DsBox from './DsBox'
+import DsStack from './DsStack'
+import DsInputLabel from './DsInputLabel'
+import DsTextField from './DsTextField'
+import DsHelperText from './DsHelperText'
 
 const KEY_CODES = {
   BACK_SPACE: 8
@@ -14,7 +15,8 @@ export default class DsOtp extends Component {
   static propTypes = {
     onComplete: PropTypes.func.isRequired,
     name: PropTypes.string,
-    length: PropTypes.number
+    length: PropTypes.number,
+    initialOtp: PropTypes.string
   }
 
   static defaultProps = {
@@ -24,9 +26,11 @@ export default class DsOtp extends Component {
 
   constructor (props) {
     super(props)
-
+    const { initialOtp = '', length } = this.props
     this.optInputRefs = new Map()
-    this.state = { otp: [] }
+    this.state = {
+      otp: initialOtp ? [...initialOtp].slice(0, length) : []
+    }
   }
 
   handleFocus = (event) => {
@@ -117,14 +121,14 @@ export default class DsOtp extends Component {
 
   renderOtpBoxes = () => {
     const { otp } = this.state
-    const { name, length, helperText, inputProps = {}, ...restProps } = this.props
+    const { label, labelSupportText, name, length, helperText, inputProps = {}, ...restProps } = this.props
     const lengthArray = Array(length).fill('')
 
     const otpInputProps = {
       ...inputProps,
       maxLength: '1',
       style: {
-        ...(inputProps.style || {}),
+        ...inputProps.style,
         textAlign: 'center'
       }
     }
@@ -134,8 +138,9 @@ export default class DsOtp extends Component {
         <DsTextField
           key={index}
           {...restProps}
+          type='tel'
           name={`${name}.${index}`}
-          dsVariant='otp'
+          ds-variant='otp'
           inputProps={otpInputProps}
           onPaste={this.handlePaste}
           onFocus={this.handleFocus}
@@ -150,49 +155,44 @@ export default class DsOtp extends Component {
   }
 
   render () {
-    const { helperText, success, color, error, inputProps, ...restProps } = this.props
+    const {
+      id,
+      name,
+      label,
+      labelSupportText,
+      helperText,
+      success,
+      color,
+      error,
+      inputProps,
+      disabled,
+      inputLabelProps,
+      formHelperTextProps,
+      ...restProps
+    } = this.props
 
-    const customColor = success ? 'success' : color
-
-    const Icon =
-      (error && ErrorRoundedIcon) || (success && CheckCircleRoundedIcon) || ''
-    const helperTextJSX = (
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'start',
-          alignItems: 'center',
-          color: `${customColor}.main`
-        }}
-      >
-        {Icon && (
-          <Icon
-            color='inherit'
-            sx={{ fontSize: 16, mr: 'var(--ds-spacing-quickFreeze)' }}
-          />
-        )}
-        <Typography sx={{ pl: 'var(--ds-spacing-deepFreeze)' }} variant='bodyRegularSmall' color='inherit'>
-          {helperText}
-          &#8203;
-        </Typography>
-      </Box>
-    )
     return (
-      <>
-        <Stack direction='row' spacing='var(--ds-spacing-glacial)'>
+      <DsBox {...restProps}>
+        <DsInputLabel
+          label={label}
+          labelSupportText={labelSupportText}
+          error={error}
+          success={success}
+          htmlFor={id || name}
+          disabled={disabled}
+          {...inputLabelProps}
+        />
+        <DsStack direction='row' spacing='var(--ds-spacing-glacial)' style={{}}>
           {this.renderOtpBoxes()}
-        </Stack>
-        {helperText && (
-          <FormHelperText
-            component='div'
-            color={customColor}
-            error={error}
-            {...restProps}
-          >
-            {helperTextJSX}
-          </FormHelperText>
-        )}
-      </>
+        </DsStack>
+        <DsHelperText
+          helperText={helperText}
+          color={color}
+          success={success}
+          error={error}
+          {...formHelperTextProps}
+        />
+      </DsBox>
     )
   }
 }

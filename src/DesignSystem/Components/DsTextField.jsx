@@ -1,98 +1,75 @@
 import React, { PureComponent } from 'react'
 
-import FormControl from '@mui/material/FormControl'
-import Box from '@mui/material/Box'
-import InputLabel from '@mui/material/InputLabel'
-import FormHelperText from '@mui/material/FormHelperText'
-import InputBase from '@mui/material/InputBase'
-import Typography from '@mui/material/Typography'
-
-import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded'
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded'
+import DsFormControl from './DsFormControl'
+import DsInputLabel from './DsInputLabel'
+import DsInputBase from './DsInputBase'
+import DsHelperText from './DsHelperText'
 
 export default class DsTextField extends PureComponent {
+  static defaultProps = {
+    autoComplete: 'off'
+  }
+
   render () {
     const {
       id,
       name,
       label,
+      labelSupportText,
       color,
       helperText,
       success,
       error,
-      endAdornment,
       sx,
       fullWidth,
       inputProps,
       inputRef,
-      ...textFiledProps
+      disabled,
+      formControlProps,
+      inputLabelProps,
+      formHelperTextProps,
+      ...textFieldProps
     } = this.props
 
     const customColor = success ? 'success' : color
 
-    const Icon =
-      (error && ErrorRoundedIcon) || (success && CheckCircleRoundedIcon) || ''
-    const helperTextJSX = (
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'start',
-          alignItems: 'center',
-          color: `${customColor}.main`
-        }}
-      >
-        {Icon && (
-          <Icon
-            color='inherit'
-            sx={{ fontSize: 16, mr: 'var(--ds-spacing-quickFreeze)' }}
-          />
-        )}
-        <Typography sx={{ pl: 'var(--ds-spacing-deepFreeze)' }} variant='bodyRegularSmall' color='inherit'>
-          {helperText}
-          &#8203;
-        </Typography>
-      </Box>
-    )
-
     return (
-      <FormControl
+      <DsFormControl
         fullWidth={fullWidth}
         color={customColor}
         error={error}
         sx={sx}
-        {...textFiledProps}
+        disabled={disabled}
+        {...formControlProps}
       >
-        {label &&
-          <InputLabel
-            color={customColor}
-            error={error}
-            htmlFor={id || name}
-            {...textFiledProps}
-          >
-            {label}
-          </InputLabel>}
-        <InputBase
+        <DsInputLabel
+          label={label}
+          labelSupportText={labelSupportText}
+          error={error}
+          success={success}
+          htmlFor={id || name}
+          disabled={disabled}
+          {...inputLabelProps}
+        />
+        <DsInputBase
           fullWidth={fullWidth}
-          endAdornment={endAdornment}
           color={customColor}
           error={error}
           id={id || name}
           name={name}
           inputProps={inputProps}
           inputRef={inputRef}
-          {...textFiledProps}
+          disabled={disabled}
+          {...textFieldProps}
         />
-        {helperText && (
-          <FormHelperText
-            component='div'
-            color={customColor}
-            error={error}
-            {...textFiledProps}
-          >
-            {helperTextJSX}
-          </FormHelperText>
-        )}
-      </FormControl>
+        <DsHelperText
+          helperText={helperText}
+          color={color}
+          success={success}
+          error={error}
+          {...formHelperTextProps}
+        />
+      </DsFormControl>
     )
   }
 }

@@ -1,476 +1,341 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Paper, Button, Grid, Typography } from '@mui/material'
-
-import SendIcon from '@mui/icons-material/Send'
+// import PropTypes from 'prop-types'
+import DsPaper from '../Components/DsPaper'
+import DsGrid from '../Components/DsGrid'
 import DsButtonGroup from '../Components/DsButtonGroup'
-class ExamplesButtons extends PureComponent {
+import DsButton from '../Components/DsButton'
+import DsRemixIcon from '../Components/DsRemixIcon'
+
+class ExamplesDsButtons extends PureComponent {
   render () {
     return (
       <>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='primary'
-                size='large'
-                // disabled
-                type='submit'
-              >
-                Primary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='secondary'
-                size='large'
-                // disabled
-                type='submit'
-              >
-                Secondary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='primary'
-                size='large'
-                disabled
-                type='submit'
-              >
-                Primary Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='secondary'
-                size='large'
-                disabled
-                type='submit'
-              >
-                Secondary Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                size='large'
-                color='primary'
-                type='submit'
-              >
-                Flushed Primary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                size='large'
-                disabled
-                type='submit'
-              >
-                Flushed Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                size='large'
-                disabled
-                type='submit'
-              >
-                Flushed Disabled
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='primary'
-                size='medium'
-                // disabled
-                type='submit'
-              >
-                Primary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='secondary'
-                size='medium'
-                // disabled
-                type='submit'
-              >
-                Secondary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='primary'
-                size='medium'
-                disabled
-                type='submit'
-              >
-                Primary Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='secondary'
-                size='medium'
-                disabled
-                type='submit'
-              >
-                Secondary Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                color='primary'
-                size='medium'
-                type='submit'
-              >
-                Flushed Primary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                size='medium'
-                disabled
-                type='submit'
-              >
-                Flushed Disabled
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='primary'
-                size='small'
-                // disabled
-                type='submit'
-              >
-                Primary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='secondary'
-                size='small'
-                // disabled
-                type='submit'
-              >
-                Secondary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='primary'
-                size='small'
-                disabled
-                type='submit'
-              >
-                Primary Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='contained'
-                color='secondary'
-                size='small'
-                disabled
-                type='submit'
-              >
-                Secondary Disabled
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                color='primary'
-                size='small'
-                type='submit'
-              >
-                Flushed Primary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                fullWidth
-                variant='flushed'
-                size='small'
-                disabled
-                type='submit'
-              >
-                Flushed Disabled
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Button
-                variant='text'
-                color='secondary'
-                size='small'
-                // disabled
-                type='submit'
-              >
-                Secondary
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button variant='text' color='secondary' disabled type='submit'>
-                Secondary Disabled
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={4}>
-              <Button variant='contained' fullWidth endIcon={<SendIcon />}>
-                Send
-              </Button>
-            </Grid>
-            <Grid item xs={4}>
-              <Button
-                variant='contained'
-                fullWidth
-                size='medium'
-                endIcon={<SendIcon />}
-              >
-                Send
-              </Button>
-            </Grid>
-            <Grid item xs={4}>
-              <Button
-                fullWidth
-                variant='contained'
-                size='large'
-                endIcon={<SendIcon />}
-              >
-                Send
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={4}>
-              <Button variant='contained' fullWidth startIcon={<SendIcon />}>
-                Send
-              </Button>
-            </Grid>
-            <Grid item xs={4}>
-              <Button
-                variant='contained'
-                fullWidth
-                size='medium'
-                startIcon={<SendIcon />}
-              >
-                Send
-              </Button>
-            </Grid>
-            <Grid item xs={4}>
-              <Button
-                fullWidth
-                variant='contained'
-                size='large'
-                startIcon={<SendIcon />}
-              >
-                Send
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
-        <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} lg={4}>
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='large'>
+                Primary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='medium'>
+                Primary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='small'>
+                Primary Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='contained' size='large'>
+                Primary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='contained' size='medium'>
+                Primary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='contained' size='small'>
+                Primary Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='large' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Primary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='medium' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Primary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='small' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Primary Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='large' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Primary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='medium' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Primary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' size='small' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Primary Button Small
+              </DsButton>
+            </DsGrid>
+          </DsGrid>
+        </DsPaper>
+
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item xs={12} md={4}>
+              <DsButton id='btn-123' fullWidth variant='contained' color='secondary' size='large'>
+                Secondary Button Large
+                {/* <span style='z-index: 1'>Secondary Button Large</span> */}
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='medium'>
+                Secondary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='small'>
+                Secondary Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='contained' color='secondary' size='large'>
+                Secondary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='contained' color='secondary' size='medium'>
+                Secondary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='contained' color='secondary' size='small'>
+                Secondary Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='large' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Secondary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='medium' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Secondary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='small' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Secondary Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='large' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Secondary Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='medium' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Secondary Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='contained' color='secondary' size='small' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Secondary Button Small
+              </DsButton>
+            </DsGrid>
+          </DsGrid>
+        </DsPaper>
+
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='large'>
+                Flushed Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='medium'>
+                Flushed Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='small'>
+                Flushed Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='flushed' size='large'>
+                Flushed Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='flushed' size='medium'>
+                Flushed Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth disabled variant='flushed' size='small'>
+                Flushed Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='large' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Flushed Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='medium' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Flushed Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='small' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Flushed Button Small
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='large' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Flushed Button Large
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='medium' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Flushed Button Medium
+              </DsButton>
+            </DsGrid>
+            <DsGrid item xs={12} md={4}>
+              <DsButton fullWidth variant='flushed' size='small' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Flushed Button Small
+              </DsButton>
+            </DsGrid>
+          </DsGrid>
+        </DsPaper>
+
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item>
+              <DsButton variant='text' color='secondary' size='small'>
+                Text Button
+              </DsButton>
+            </DsGrid>
+            <DsGrid item>
+              <DsButton disabled variant='text' color='secondary' size='small'>
+                Text Button
+              </DsButton>
+            </DsGrid>
+            <DsGrid item>
+              <DsButton variant='text' color='secondary' size='small' startIcon={<DsRemixIcon className='ri-add-line' />}>
+                Text Button
+              </DsButton>
+            </DsGrid>
+            <DsGrid item>
+              <DsButton variant='text' color='secondary' size='small' endIcon={<DsRemixIcon className='ri-add-line' />}>
+                Text Button
+              </DsButton>
+            </DsGrid>
+          </DsGrid>
+        </DsPaper>
+
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item xs={12} md={6}>
               <DsButtonGroup
-                primaryActionButton={
-                  <Button
-                    variant='contained'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                  >
-                    complete setup
-                  </Button>
-                }
-              />
-            </Grid>
-            <Grid item xs={12} lg={4}>
+                size='large'
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton fullWidth variant='contained' color='secondary'>
+                  Secondary Button
+                </DsButton>
+                <DsButton fullWidth variant='contained' color='primary'>
+                  Primary Button
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+            <DsGrid item xs={12} md={6}>
               <DsButtonGroup
-                primaryActionButton={
-                  <Button
-                    variant='contained'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                  >
-                    complete setup
-                  </Button>
-                }
-                secondaryActionButton={
-                  <Button
-                    variant='contained'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                    color='secondary'
-                  >
-                    Close
-                  </Button>
-                }
-              />
-            </Grid>
-            <Grid item xs={12} lg={4}>
+                size='medium'
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton fullWidth variant='contained' color='secondary'>
+                  Secondary Button
+                </DsButton>
+                <DsButton fullWidth variant='contained' color='primary'>
+                  Primary Button
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+            <DsGrid item xs={12} md={6}>
               <DsButtonGroup
-                primaryActionButton={
-                  <Button
-                    variant='contained'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                  >
-                    complete setup
-                  </Button>
-                }
-                secondaryActionButton={
-                  <Button
-                    variant='contained'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                    color='secondary'
-                  >
-                    Close
-                  </Button>
-                }
-                tertiaryActionComponennt={
-                  <Typography variant='supportRegularInfo'>
-                    By choosing to agree, I agree to accept all applicable
-                    <Typography
-                      variant='inherit'
-                      component='span'
-                      color='primary'
-                    >
-                      {' '}
-                      Terms & Conditions{' '}
-                    </Typography>
-                    and
-                    <Typography
-                      variant='inherit'
-                      component='span'
-                      color='primary'
-                    >
-                      {' '}
-                      Privacy Policy
-                    </Typography>
-                    .
-                  </Typography>
-                }
-              />
-            </Grid>
-            <Grid item xs={12} lg={4}>
+                size='small'
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton fullWidth variant='contained' color='secondary'>
+                  Secondary Button
+                </DsButton>
+                <DsButton fullWidth variant='contained' color='primary'>
+                  Primary Button
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+          </DsGrid>
+        </DsPaper>
+
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item xs={12} md={6}>
               <DsButtonGroup
-                disablePadding
-                primaryActionButton={
-                  <Button
-                    variant='flushed'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                  >
-                    complete setup
-                  </Button>
-                }
-                tertiaryActionComponennt={
-                  <Typography variant='supportRegularInfo'>
-                    By choosing to agree, I agree to accept all applicable
-                    <Typography
-                      variant='inherit'
-                      component='span'
-                      color='primary'
-                    >
-                      {' '}
-                      Terms & Conditions{' '}
-                    </Typography>
-                    and
-                    <Typography
-                      variant='inherit'
-                      component='span'
-                      color='primary'
-                    >
-                      {' '}
-                      Privacy Policy
-                    </Typography>
-                    .
-                  </Typography>
-                }
-              />
-            </Grid>
-            <Grid item xs={12} lg={4}>
+                noPadding
+                fullWidth
+                size='large'
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton variant='flushed'>
+                  Flushed Button
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+            <DsGrid item xs={12} md={6}>
               <DsButtonGroup
-                disablePadding
-                primaryActionButton={
-                  <Button
-                    variant='flushed'
-                    size='medium'
-                    startIcon={<SendIcon />}
-                  >
-                    complete setup
-                  </Button>
-                }
-              />
-            </Grid>
-          </Grid>
-        </Paper>
+                noPadding
+                fullWidth
+                size='medium'
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton fullWidth variant='flushed'>
+                  Flushed Button
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+            <DsGrid item xs={12} md={6}>
+              <DsButtonGroup
+                noPadding
+                fullWidth
+                size='small'
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton variant='flushed'>
+                  Flushed Button
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+            <DsGrid item xs={12} md={6} />
+          </DsGrid>
+        </DsPaper>
+
+        <DsPaper sx={{ padding: 'var(--ds-spacing-warm)', mb: 'var(--ds-spacing-warm)' }}>
+          <DsGrid container direction='row' spacing={8}>
+            <DsGrid item xs={12} md={6}>
+              <DsButtonGroup
+                sx={{ border: '1px solid var(--ds-color-strokeDefault)' }}
+              >
+                <DsButton variant='text' color='secondary'>
+                  Text Button 1
+                </DsButton>
+                <DsButton variant='text' color='secondary'>
+                  Text Button 2
+                </DsButton>
+              </DsButtonGroup>
+            </DsGrid>
+          </DsGrid>
+        </DsPaper>
       </>
     )
   }
 }
 
-export default ExamplesButtons
-
-ExamplesButtons.propTypes = {
-  state: PropTypes.object,
-  onInputChange: PropTypes.func,
-  onLogin: PropTypes.func
-}
-
-ExamplesButtons.defaultProps = {
-  state: {},
-  onInputChange: () => undefined,
-  onLogin: () => undefined
-}
+export default ExamplesDsButtons

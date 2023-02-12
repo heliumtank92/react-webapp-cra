@@ -1,76 +1,140 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { FormControl, MenuItem, Select, Typography } from '@mui/material'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Box } from '@mui/system'
-import ErrorLabel from './ErrorLabel'
 
-const Placeholder = ({ placeholder }) => {
+import Select from '@mui/material/Select'
+
+import DsFormControl from './DsFormControl'
+import DsInputLabel from './DsInputLabel'
+import DsInputBase from './DsInputBase'
+import DsMenuItem from './DsMenuItem'
+import DsTypo from './DsTypo'
+import DsRemixIcon from './DsRemixIcon'
+import DsHelperText from './DsHelperText'
+
+const IconComponent = (props) => {
   return (
-    <Typography variant='bodyRegularMedium' color='text.disabled'>
-      {placeholder}
-    </Typography>
+    <DsRemixIcon {...props} className={`${props.className} ri-arrow-drop-down-line`} />
   )
 }
 
-class DsSelect extends PureComponent {
+const Placeholder = ({ placeholder }) => {
+  return (
+    <DsTypo variant='bodyRegularMedium' color='text.disabled'>
+      {placeholder}
+    </DsTypo>
+  )
+}
+
+const SelectedValue = ({ selectedValue, valueMap }) => {
+  return Array.isArray(selectedValue)
+    ? selectedValue.map((selectedVal) => valueMap[selectedVal]).join(', ')
+    : valueMap[selectedValue]
+}
+
+export default class DsSelect extends PureComponent {
   static propTypes = {
-    value: PropTypes.any,
-    placeholder: PropTypes.string,
-    options: PropTypes.any,
-    displayKey: PropTypes.string,
-    helperText: PropTypes.string,
-    error: PropTypes.bool
+    options: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.any
+    }))
+  }
+
+  static defaultProps = {
+    options: []
+  }
+
+  constructor (props) {
+    super(props)
+    this.inputBaseRef = React.createRef()
   }
 
   render () {
     const {
-      value,
+      id,
+      name,
       placeholder,
+      label,
+      labelSupportText,
+      color,
+      helperText,
+      success,
+      error,
+      sx,
+      fullWidth,
+      children,
       options,
       displayKey,
-      helperText,
-      error,
-      label,
-      ...restProps
+      disabled,
+      formControlProps,
+      inputLabelProps,
+      formHelperTextProps,
+      ...selectProps
     } = this.props
 
+    const customColor = success ? 'success' : color
+
+    const valueMap = options.reduce((acc, item, index) => {
+      acc[item.value] = item.label
+      return acc
+    }, {})
+
     return (
-      <FormControl fullWidth>
-        <Box pb={2.5}>
-          <Typography variant='bodyRegularMedium'>{label}</Typography>
-        </Box>
-        <Select
-          IconComponent={(props) => <KeyboardArrowDownIcon />}
-          value={value}
-          displayEmpty
-          renderValue={(value) =>
-            value && value.length
-              ? (
-                  Array.isArray(value)
-                    ? (
-                        value.join(', ')
-                      )
-                    : (
-                        value
-                      )
-                )
-              : (
-                <Placeholder placeholder={placeholder} />
-                )}
+      <DsFormControl
+        fullWidth={fullWidth}
+        color={customColor}
+        error={error}
+        sx={sx}
+        disabled={disabled}
+        {...formControlProps}
+      >
+        <DsInputLabel
+          label={label}
+          labelSupportText={labelSupportText}
           error={error}
-          {...restProps}
+          success={success}
+          htmlFor={id || name}
+          disabled={disabled}
+          {...inputLabelProps}
+        />
+        <Select
+          ref={this.inputBaseRef}
+          id={id}
+          name={name}
+          IconComponent={IconComponent}
+          displayEmpty
+          MenuProps={{
+            anchorEl: () => this.inputBaseRef.current,
+            anchorOrigin: {
+              vertical: 'bottom',
+              horizontal: 'center'
+            }
+          }}
+          input={<DsInputBase />}
+          renderValue={(value) => (
+            (value && value.length)
+              ? <SelectedValue selectedValue={value} valueMap={valueMap} />
+              : <Placeholder placeholder={placeholder} />
+          )}
+          error={error}
+          disabled={disabled}
+          {...selectProps}
         >
-          {options.map((val, ind) => (
-            <MenuItem value={displayKey ? val[displayKey] : val} key={ind}>
-              {displayKey ? val[displayKey] : val}
-            </MenuItem>
-          ))}
+          {children}
+          {options.map(({ label, value }, index) => (
+            <DsMenuItem value={value} key={index}>
+              <span>{label}</span>
+            </DsMenuItem>
+          )
+          )}
         </Select>
-        {error && <ErrorLabel helperText={helperText} />}
-      </FormControl>
+        <DsHelperText
+          helperText={helperText}
+          color={color}
+          success={success}
+          error={error}
+          {...formHelperTextProps}
+        />
+      </DsFormControl>
     )
   }
 }
-
-export default DsSelect

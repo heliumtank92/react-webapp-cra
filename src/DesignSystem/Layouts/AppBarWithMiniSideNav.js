@@ -10,7 +10,7 @@ import DsSideNav from 'src/DesignSystem/Components/DsSideNav'
 import { isMobileDevice } from '../Utils/browser'
 import dsSpacing from '../Theme/spacing'
 
-const DEFAUT_DESKTOP_OPEN = false
+const DEFAUT_DESKTOP_OPEN = true
 
 export default class AppBarWithMiniSideNav extends React.Component {
   static propTypes = {
@@ -102,8 +102,10 @@ export default class AppBarWithMiniSideNav extends React.Component {
     const { leftIcon, ...restAppBarProps } = appBarProps
     const { onNavlinkClick } = sideNavProps
 
-    const appBarPropsOverride = ((miniSideNav && !isMobile) && { dsVariant: 'mini-drawer' }) || {}
-    const sideNavPropsOveride = ((miniSideNav && !isMobile) && { dsVariant: 'mini-drawer', variant: 'permanent' }) || { variant: 'temporary' }
+    const appBarPropsOverride = ((miniSideNav && !isMobile) && {
+      'ds-variant': 'mini-drawer'
+    }) || {}
+    const sideNavPropsOveride = ((miniSideNav && !isMobile) && { 'ds-variant': 'mini-drawer', variant: 'permanent' }) || { variant: 'temporary' }
 
     return (
       <Box sx={{ display: 'flex' }}>
@@ -117,6 +119,7 @@ export default class AppBarWithMiniSideNav extends React.Component {
               {leftIcon}
             </IconButton>
           }
+
         />
         <DsSideNav
           {...sideNavProps}

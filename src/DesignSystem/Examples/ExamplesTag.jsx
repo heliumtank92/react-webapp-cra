@@ -1,55 +1,64 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import DsPaper from '../Components/DsPaper'
+import DsStack from '../Components/DsStack'
+import DsTagGroup from '../Components/DsTagGroup'
 import DsTag from '../Components/DsTag'
-import { Box, Chip, FormHelperText, Grid, Paper } from '@mui/material'
-import StarIcon from '@mui/icons-material/Star'
 
 const tags = [
   {
-    name: 'Annual Gross Income',
-    id: 1
+    label: 'Annual Gross Income',
+    value: 1
   },
   {
-    name: 'Net Worth',
-    id: 1
+    label: 'Net Worth',
+    value: 2
   },
   {
-    name: 'Testing',
-    id: 1
+    label: 'Testing',
+    value: 3
   }
 ]
+
 class ExamplesTag extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      tag: ''
+      selectedValue: 1,
+      selectedValues: [1]
     }
   }
 
-  render () {
-    const { tag } = this.state
+  handleChange = (name, value) => {
+    this.setState({ [name]: value })
+  }
 
+  render () {
     return (
-      <Paper sx={{ p: 6, backgroundColor: 'inherit' }}>
-        <Box p={2}>
-          {tags.map((val, ind) => {
-            return (
-              <DsTag
-                key={ind}
-                icon={<StarIcon />}
-                label={val.name}
-                color='secondary'
-                onClick={(e, v) => this.setState({ tag: val.name })}
-                checked={val.name === tag}
-              />
-            )
-          })}
-        </Box>
-      </Paper>
+      <DsPaper sx={{ p: 'var(--ds-spacing-mild)' }}>
+        <DsStack spacing='var(--ds-spacing-hot)'>
+          <DsTagGroup
+            name='selectedValue'
+            value={this.state.selectedValue}
+            onChange={this.handleChange}
+          >
+            {tags.map((tag, index) => (
+              <DsTag key={index} label={tag.label} value={tag.value} />
+            ))}
+          </DsTagGroup>
+          <DsTagGroup
+            multi
+            name='selectedValues'
+            value={this.state.selectedValues}
+            onChange={this.handleChange}
+          >
+            {tags.map((tag, index) => (
+              <DsTag key={index} label={tag.label} value={tag.value} />
+            ))}
+          </DsTagGroup>
+        </DsStack>
+      </DsPaper>
     )
   }
 }
-
-ExamplesTag.propTypes = {}
 
 export default ExamplesTag

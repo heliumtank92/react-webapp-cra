@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import Box from '@mui/material/Box'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Stack from '@mui/system/Stack'
+
+import DsBox from './DsBox'
+import DsTypo from './DsTypo'
 
 export default class DsAppBar extends PureComponent {
   static propTypes = {
@@ -22,20 +22,18 @@ export default class DsAppBar extends PureComponent {
 
   render () {
     const { leftIcon, content, rightActions, ...appBarProps } = this.props
+    const { color } = appBarProps
+    const iconColor = color === 'primary' ? 'iconOnSurface' : undefined
 
-    const contentJSX =
-      typeof content === 'string'
-        ? (
-          <Typography variant='headingBoldSmall'>{content}</Typography>
-          )
-        : (
-            content
-          )
+    const contentJSX = typeof content === 'string'
+      ? <DsTypo variant='headingBoldSmall'>{content}</DsTypo>
+      : content
+
     return (
       <AppBar {...appBarProps}>
         <Toolbar>
           {leftIcon && (
-            <Box
+            <DsBox
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
@@ -43,34 +41,31 @@ export default class DsAppBar extends PureComponent {
                 pr: 'var(--ds-spacing-bitterCold)'
               }}
             >
-              {React.cloneElement(leftIcon, { variant: 'app-bar' })}
-            </Box>
+              {React.cloneElement(leftIcon, { color: iconColor })}
+            </DsBox>
           )}
-          <Box
+          <DsBox
             sx={{
-              displayd: 'flex',
-              justifyContent: 'center',
+              display: 'inline-flex',
+              justifyContent: 'start',
               alignItems: 'center',
-              flexGrow: 1,
-              pr: 'var(--ds-spacing-bitterCold)'
+              flexGrow: 1
             }}
           >
             {contentJSX}
-          </Box>
+          </DsBox>
           {rightActions && (
-            <Box
+            <DsBox
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center'
               }}
             >
-              <Stack direction='row' spacing='var(--ds-spacing-bitterCold)'>
-                {rightActions.map((rightAction) =>
-                  React.cloneElement(rightAction, { variant: 'app-bar' })
-                )}
-              </Stack>
-            </Box>
+              {rightActions.map((rightAction) =>
+                React.cloneElement(rightAction, { color: iconColor, sx: { marginLeft: 'var(--ds-spacing-bitterCold)' } })
+              )}
+            </DsBox>
           )}
         </Toolbar>
       </AppBar>

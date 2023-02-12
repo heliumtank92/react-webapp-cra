@@ -1,8 +1,12 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Grid, Button, Typography } from '@mui/material'
-import DsDialogue from '../Components/DsDialogue'
-import { Stack } from '@mui/system'
+// import PropTypes from 'prop-types'
+import DsGrid from '../Components/DsGrid'
+import DsStack from '../Components/DsStack'
+import DsTypo from '../Components/DsTypo'
+import DsDialog from '../Components/DsDialog'
+import DsLink from '../Components/DsLink'
+import DsButtonGroup from '../Components/DsButtonGroup'
+import DsButton from '../Components/DsButton'
 
 class ExamplesDialog extends PureComponent {
   constructor (props) {
@@ -20,8 +24,7 @@ class ExamplesDialog extends PureComponent {
     this.handleDoubleButtonOpen = this.handleDoubleButtonOpen.bind(this)
     this.handleTripleButtonOpen = this.handleTripleButtonOpen.bind(this)
     this.handleFlushedButtonOpen = this.handleFlushedButtonOpen.bind(this)
-    this.handleFlushedTripleButtonOpen =
-      this.handleFlushedTripleButtonOpen.bind(this)
+    this.handleFlushedTripleButtonOpen = this.handleFlushedTripleButtonOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
   }
 
@@ -65,139 +68,110 @@ class ExamplesDialog extends PureComponent {
     } = this.state
 
     return (
-      <Grid container spacing={2}>
-        <Grid item>
-          <Stack direction='row' spacing={2}>
-            <Button onClick={this.handleSingleButtonOpen}>Single</Button>
-            <Button onClick={this.handleDoubleButtonOpen}>Double</Button>
-            <Button onClick={this.handleTripleButtonOpen}>Triple</Button>
-            <Button onClick={this.handleFlushedButtonOpen}>Flushed</Button>
-            <Button onClick={this.handleFlushedTripleButtonOpen}>
+      <DsGrid container spacing={2}>
+        <DsGrid item>
+          <DsStack direction='row' spacing={2}>
+            <DsButton onClick={this.handleSingleButtonOpen}>Single</DsButton>
+            <DsButton onClick={this.handleDoubleButtonOpen}>Double</DsButton>
+            {/* <DsButton onClick={this.handleTripleButtonOpen}>Triple</DsButton> */}
+            <DsButton onClick={this.handleFlushedButtonOpen}>Flushed</DsButton>
+            <DsButton onClick={this.handleFlushedTripleButtonOpen}>
               Flushed Triple
-            </Button>
-          </Stack>
+            </DsButton>
+          </DsStack>
 
-          <DsDialogue
+          <DsDialog
             open={singleButtonOpen}
-            headerText='Single Button'
-            primaryActionButton={<Button>Primary Action</Button>}
+            heading='Single Button'
             onClose={this.handleClose}
-            textOnly
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-            nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at
-            quam. Neque orci arcu amet. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor
-            diam maecenas eget at quam. Neque orci arcu amet. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl
-            in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu
-            amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget
-            at quam. Neque orci arcu amet. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac
-            vitae tempor diam maecenas eget at quam. Neque orci arcu amet. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo
-            rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque
-            orci arcu amet. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas
-            eget at quam. Neque orci arcu amet. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac
-            vitae tempor diam maecenas eget at quam. Neque orci arcu amet. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo
-            rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque
-            orci arcu amet. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas
-            eget at quam. Neque orci arcu amet. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac
-            vitae tempor diam maecenas eget at quam. Neque orci arcu amet.
-          </DsDialogue>
-          <DsDialogue
-            open={doubleButtonOpen}
-            headerText='Flushed Button'
-            primaryActionButton={<Button>Primary Action</Button>}
-            secondaryActionButton={
-              <Button color='secondary'>Secondary Action</Button>
+            buttonGroup={
+              <DsButtonGroup>
+                <DsButton>Primary Action</DsButton>
+              </DsButtonGroup>
             }
-            onClose={this.handleClose}
-          >
-            Flushed Button
-          </DsDialogue>
-          <DsDialogue
+            // textOnly
+            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.'
+          />
+          <DsDialog
             open={doubleButtonOpen}
-            headerText='Flushed Button'
-            primaryActionButton={<Button>Primary Action</Button>}
-            secondaryActionButton={
-              <Button color='secondary'>Secondary Action</Button>
-            }
+            heading='Double Button'
             onClose={this.handleClose}
-          >
-            Flushed Button
-          </DsDialogue>
-          <DsDialogue
+            buttonGroup={
+              <DsButtonGroup>
+                <DsButton color='secondary'>Secondary Action</DsButton>
+                <DsButton>Primary Action</DsButton>
+              </DsButtonGroup>
+            }
+            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.'
+          />
+          {/* <DsDialog
             open={tripleButtonOpen}
-            headerText='Flushed Button'
-            primaryActionButton={<Button>Primary Action</Button>}
-            secondaryActionButton={
-              <Button color='secondary'>Secondary Action</Button>
-            }
-            tertiaryActionComponennt={
-              <Typography variant='supportRegularInfo'>
-                By choosing to agree, I agree to accept all applicable
-                <Typography variant='inherit' component='span' color='primary'>
-                  {' '}
-                  Terms & Conditions{' '}
-                </Typography>
-                and
-                <Typography variant='inherit' component='span' color='primary'>
-                  {' '}
-                  Privacy Policy
-                </Typography>
-                .
-              </Typography>
-            }
+            heading='Tripple Button'
             onClose={this.handleClose}
-          >
-            Flushed Button
-          </DsDialogue>
-          <DsDialogue
+            buttonGroup={
+              <DsButtonGroup
+                primaryActionButton={<DsButton>Primary Action</DsButton>}
+                secondaryActionButton={
+                  <DsButton color='secondary'>Secondary Action</DsButton>
+                }
+                tertiaryActionComponent={
+                  <DsTypo variant='supportRegularInfo'>
+                    By choosing to agree, I agree to accept all applicable&nbsp;
+                    <DsLink variant='inherit'>
+                      Terms & Conditions
+                    </DsLink>
+                    &nbsp;and&nbsp;
+                    <DsLink variant='inherit'>
+                      Privacy Policy
+                    </DsLink>
+                    .
+                  </DsTypo>
+                }
+              />
+            }
+            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.'
+          /> */}
+          <DsDialog
             open={flushedButtonOpen}
-            headerText='Flushed Button'
-            flushedActionButton={<Button>Primary Action</Button>}
+            heading='Flushed Button'
             onClose={this.handleClose}
-          >
-            Flushed Button
-          </DsDialogue>
-          <DsDialogue
-            open={flushedTripleButtonOpen}
-            headerText='Flushed Button'
-            flushedActionButton={<Button>Primary Action</Button>}
-            tertiaryActionComponennt={
-              <Typography variant='supportRegularInfo'>
-                By choosing to agree, I agree to accept all applicable
-                <Typography variant='inherit' component='span' color='primary'>
-                  {' '}
-                  Terms & Conditions{' '}
-                </Typography>
-                and
-                <Typography variant='inherit' component='span' color='primary'>
-                  {' '}
-                  Privacy Policy
-                </Typography>
-                .
-              </Typography>
+            buttonGroup={
+              <DsButtonGroup>
+                <DsButton variant='flushed'>Primary Action</DsButton>
+              </DsButtonGroup>
             }
+            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.'
+          />
+          {/* <DsDialog
+            open={flushedTripleButtonOpen}
+            heading='Flushed Triple Button'
             onClose={this.handleClose}
-          >
-            Flushed Button
-          </DsDialogue>
-        </Grid>
-      </Grid>
+            buttonGroup={
+              <DsButtonGroup
+                flushed
+                primaryActionButton={<DsButton variant='flushed'>Primary Action</DsButton>}
+                tertiaryActionComponent={
+                  <DsTypo variant='supportRegularInfo'>
+                    By choosing to agree, I agree to accept all applicable&nbsp;
+                    <DsLink variant='inherit'>
+                      Terms & Conditions
+                    </DsLink>
+                    &nbsp;and&nbsp;
+                    <DsLink variant='inherit'>
+                      Privacy Policy
+                    </DsLink>
+                    .
+                  </DsTypo>
+                }
+              />
+            }
+
+            description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor nulla leo rutrum nisl in. Ac vitae tempor diam maecenas eget at quam. Neque orci arcu amet.'
+          /> */}
+        </DsGrid>
+      </DsGrid>
     )
   }
 }
 
 export default ExamplesDialog
-
-ExamplesDialog.propTypes = {}
-
-ExamplesDialog.defaultProps = {}

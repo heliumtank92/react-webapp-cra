@@ -1,17 +1,27 @@
 const dsRules = {
-  appBarMobileMinHeight: '56px',
-  appBarIconBtnHeight: 24,
-  appBarIconBtnWidth: 24,
-  appBarIconBtnFontSize: 16,
+  headerMobileHeight: '64px',
+  headerDesktopHeight: '84px',
 
-  dialogXsMaxWidth: '288px',
+  appBarMobileMinHeight: '56px',
+
+  stepperConnectorMinHeight: '28px',
+  searchbarMinWidth: '288px',
+  searchbarHeight: '40px',
+
+  drawerWidth: '240px',
+  drawerMiniWidth: '56px',
+
+  dialogXsMaxWidth: '600px',
+  bottomStaggerWorkingAreaHeight: '33vh',
 
   avatarSSize: '24px',
   avatarMSize: '32px',
   avatarLSize: '40px',
   avatarXLSize: '48px',
   avatarXXLSize: '64px',
-  avatar3XLSize: '80px'
+  avatar3XLSize: '80px',
+
+  formHelperTextMinHeight: '24px'
 }
 
 export default dsRules

@@ -1,60 +1,47 @@
 import React, { PureComponent } from 'react'
 // import PropTypes from 'prop-types'
-import Grid from '@mui/material/Grid'
 import DsAppBar from '../Components/DsAppBar'
 import MenuIcon from '@mui/icons-material/Menu'
-import { IconButton, Avatar } from '@mui/material'
+import DsIconButton from '../Components/DsIconButton'
+import DsStack from '../Components/DsStack'
 
 const rightActions = [
-  <IconButton key='0'>
+  <DsIconButton key='0'>
     <MenuIcon />
-  </IconButton>,
-  <IconButton key='1'>
+  </DsIconButton>,
+  <DsIconButton key='1'>
     <MenuIcon />
-  </IconButton>,
-  <IconButton key='2'>
-    <Avatar />
-  </IconButton>
+  </DsIconButton>
 ]
 
 class ExamplesAppBar extends PureComponent {
   render () {
     return (
-      <Grid direction='column' container spacing={4}>
-        <Grid container direction='row' item spacing={4}>
-          <Grid item xs={7}>
-            <DsAppBar
-              position='static'
-              leftIcon={
-                <IconButton>
-                  <MenuIcon />
-                </IconButton>
-              }
-              content='Lorem Ipsum'
-              rightActions={rightActions}
-            />
-          </Grid>
-          <Grid item xs={7}>
-            <DsAppBar
-              position='static'
-              color='primary'
-              leftIcon={
-                <IconButton>
-                  <MenuIcon />
-                </IconButton>
-              }
-              content='Lorem Ipsum'
-              rightActions={rightActions}
-            />
-          </Grid>
-        </Grid>
-      </Grid>
+      <DsStack spacing='var(--ds-spacing-cool)'>
+        <DsAppBar
+          position='static'
+          leftIcon={
+            <DsIconButton>
+              <MenuIcon />
+            </DsIconButton>
+          }
+          content='Lorem Ipsum'
+          rightActions={rightActions}
+        />
+        <DsAppBar
+          position='static'
+          color='primary'
+          leftIcon={
+            <DsIconButton>
+              <MenuIcon />
+            </DsIconButton>
+          }
+          content='Lorem Ipsum'
+          rightActions={rightActions}
+        />
+      </DsStack>
     )
   }
 }
 
 export default ExamplesAppBar
-
-ExamplesAppBar.propTypes = {}
-
-ExamplesAppBar.defaultProps = {}

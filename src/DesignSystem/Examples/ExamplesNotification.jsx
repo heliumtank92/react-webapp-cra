@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import { Grid, Button } from '@mui/material'
-import { Stack } from '@mui/system'
+// import PropTypes from 'prop-types'
+import DsGrid from '../Components/DsGrid'
+import DsStack from '../Components/DsStack'
+import DsButton from '../Components/DsButton'
+
 import { withSnackbar } from 'notistack'
 import { buildEnqueueSnackbarProps } from '../Components/DsNotistackAlert'
 
@@ -24,86 +26,86 @@ class ExamplesNotification extends PureComponent {
 
   render () {
     return (
-      <Grid direction='column' container spacing={2}>
-        <Grid item>
-          <Stack direction='row' spacing={2}>
-            <Button
+      <DsGrid direction='column' container spacing={2}>
+        <DsGrid item>
+          <DsStack direction='row' spacing={2}>
+            <DsButton
               onClick={() => {
-                this.enqueueNotification('default', 'filled')
+                this.enqueueNotification('', 'filled')
               }}
             >
               Default Filled
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('info', 'filled')
               }}
             >
               Info Filled
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('success', 'filled')
               }}
             >
               Success Filled
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('error', 'filled')
               }}
             >
               Error Filled
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('warning', 'filled')
               }}
             >
               Warning Filled
-            </Button>
-          </Stack>
-        </Grid>
-        <Grid item>
-          <Stack direction='row' spacing={2}>
-            <Button
+            </DsButton>
+          </DsStack>
+        </DsGrid>
+        <DsGrid item>
+          <DsStack direction='row' spacing={2}>
+            <DsButton
               onClick={() => {
-                this.enqueueNotification('default', 'outlined')
+                this.enqueueNotification('', 'outlined')
               }}
             >
               Default Outlined
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('info', 'outlined')
               }}
             >
               Info Outlined
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('success', 'outlined')
               }}
             >
               Success Outlined
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('error', 'outlined')
               }}
             >
               Error Outlined
-            </Button>
-            <Button
+            </DsButton>
+            <DsButton
               onClick={() => {
                 this.enqueueNotification('warning', 'outlined')
               }}
             >
               Warning Outlined
-            </Button>
-          </Stack>
-        </Grid>
-      </Grid>
+            </DsButton>
+          </DsStack>
+        </DsGrid>
+      </DsGrid>
     )
   }
 }

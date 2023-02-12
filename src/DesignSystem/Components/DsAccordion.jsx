@@ -1,25 +1,28 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+
+import Accordion from '@mui/material/Accordion'
+import AccordionDetails from '@mui/material/AccordionDetails'
+import AccordionSummary from '@mui/material/AccordionSummary'
+
+import DsRemixIcon from './DsRemixIcon'
 
 class DsAccordion extends PureComponent {
   static propTypes = {
     header: PropTypes.node,
     summary: PropTypes.node,
-    ExpandIcon: PropTypes.node
+    expandIcon: PropTypes.element
   }
 
   static defaultProps = {
-    ExpandIcon: ExpandMoreIcon
+    expandIcon: <DsRemixIcon className='ri-arrow-drop-down-line' />
   }
 
   render () {
-    const { header, summary, ExpandIcon } = this.props
-
+    const { header, summary, expandIcon, ...accordionProps } = this.props
     return (
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandIcon />}>
+      <Accordion {...accordionProps}>
+        <AccordionSummary expandIcon={expandIcon}>
           {header}
         </AccordionSummary>
         <AccordionDetails>{summary}</AccordionDetails>

@@ -49,14 +49,14 @@ export default class DsSideNav extends PureComponent {
           }}
         >
           <ListItemButton
-            dsVariant='mini-drawer'
+            ds-variant='mini-drawer'
             sx={{
               minHeight: 48,
               justifyContent: open ? 'initial' : 'center'
             }}
           >
             <ListItemIcon
-              dsVariant='mini-drawer'
+              ds-variant='mini-drawer'
               sx={{
                 minWidth: 0,
                 justifyContent: 'center'

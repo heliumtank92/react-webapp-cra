@@ -1,14 +1,18 @@
 import React, { PureComponent } from 'react'
 
-import Stack from '@mui/system/Stack'
+import DsStack from './DsStack'
 
 export default class DsChipGroup extends PureComponent {
   render () {
     const { children } = this.props
     return (
-      <Stack direction='row' spacing='var(--ds-spacing-glacial)'>
+      <DsStack
+        direction='row'
+        spacing='var(--ds-spacing-glacial)'
+        {...this.props}
+      >
         {children}
-      </Stack>
+      </DsStack>
     )
   }
 }

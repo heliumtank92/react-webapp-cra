@@ -1,38 +1,50 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Grid, Paper, Typography } from '@mui/material'
-import { Box } from '@mui/system'
+import React, { PureComponent } from 'react'
+import DsPaper from '../Components/DsPaper'
+import DsStack from '../Components/DsStack'
+import DsBox from '../Components/DsBox'
 import DsSwitch from '../Components/DsSwitch'
 
-class ExamplesSwitch extends Component {
+class ExamplesSwitch extends PureComponent {
   constructor (props) {
     super(props)
     this.state = {
-      toggleValue: 'no'
+      switchValue: false
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange (e, val) {
-    if (val) this.setState({ toggleValue: val })
+  handleChange (name, value) {
+    this.setState({ [name]: value })
   }
 
   render () {
-    const { toggleValue } = this.state
+    const { switchValue } = this.state
+
     return (
       <>
-        <Paper sx={{ p: 6 }}>
-          <Grid container spacing={6}>
-            <Grid item xs={12}>
-              <DsSwitch value={toggleValue} onChange={this.handleChange} />
-            </Grid>
-          </Grid>
-        </Paper>
+        <DsPaper sx={{ p: 'var(--ds-spacing-mild)' }}>
+          <DsStack direction='row' spacing='var(--ds-spacing-mild)'>
+            <DsBox>
+              <DsSwitch
+                name='switchValue'
+                value={switchValue}
+                onChange={this.handleChange}
+              />
+            </DsBox>
+
+            <DsBox>
+              <DsSwitch
+                name='switchValue'
+                value={switchValue}
+                onChange={this.handleChange}
+                disabled
+              />
+            </DsBox>
+          </DsStack>
+        </DsPaper>
       </>
     )
   }
 }
-
-ExamplesSwitch.propTypes = {}
 
 export default ExamplesSwitch

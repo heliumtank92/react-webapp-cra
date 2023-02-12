@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Alert from '@mui/material/Alert'
 import { withSnackbar } from 'notistack'
+
+import DsToast from './DsToast'
 
 class AlertMessage extends Component {
   static propTypes = {
@@ -40,17 +41,18 @@ class AlertMessage extends Component {
 
   render () {
     const { forwardedRef, messageOptions } = this.props
-    const { variant, severity, message } = messageOptions
+    const { variant, severity, message, sx } = messageOptions
 
     return (
-      <Alert
-        ref={forwardedRef}
+      <DsToast
+        forwardedRef={forwardedRef}
         variant={variant}
-        severity={severity}
+        color={severity}
+        sx={sx}
         onClose={this.handleClose}
       >
         {message}
-      </Alert>
+      </DsToast>
     )
   }
 }

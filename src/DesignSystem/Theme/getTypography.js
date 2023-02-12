@@ -2,20 +2,20 @@ export default function getTypography (fontFamilyName = '') {
   const dsTypoPrimitive = {
     primaryFont: fontFamilyName,
 
-    fontsizeScorched: '76px',
-    fontsizeTorrid: '56px',
-    fontsizeBlazzing: '48px',
-    fontsizeHot: '44px',
-    fontsizeTropical: '40px',
-    fontsizeWarm: '32px',
-    fontsizeMild: '24px',
-    fontsizeCool: '20px',
-    fontsizeCold: '18px',
-    fontsizeBitterCold: '16px',
-    fontsizeFrigid: '14px',
-    fontsizeFrostbite: '12px',
-    fontsizeBlizzard: '11px',
-    fontsizeIceAge: '10px',
+    fontSizeScorched: '76px',
+    fontSizeTorrid: '56px',
+    fontSizeBlazzing: '48px',
+    fontSizeHot: '44px',
+    fontSizeTropical: '40px',
+    fontSizeWarm: '32px',
+    fontSizeMild: '24px',
+    fontSizeCool: '20px',
+    fontSizeCold: '18px',
+    fontSizeBitterCold: '16px',
+    fontSizeFrigid: '14px',
+    fontSizeFrostbite: '12px',
+    fontSizeBlizzard: '11px',
+    fontSizeIceAge: '10px',
 
     fontWeightRegular: 400,
     fontWeightSemibold: 600,
@@ -43,138 +43,105 @@ export default function getTypography (fontFamilyName = '') {
   const dsTypoComposite = {
     headingBoldExtraLarge: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeWarm,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeWarm,
-        dsTypoPrimitive.lineHeightIceAge
-      )
+      fontSize: dsTypoPrimitive.fontSizeWarm,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeWarm} + ${dsTypoPrimitive.lineHeightIceAge})`
     },
     headingBoldLarge: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeMild,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeMild,
-        dsTypoPrimitive.lineHeightGlacial
-      ),
+      fontSize: dsTypoPrimitive.fontSizeMild,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeMild} + ${dsTypoPrimitive.lineHeightGlacial})`,
       letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     headingBoldMedium: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeCool,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeCool,
-        dsTypoPrimitive.lineHeightGelid
-      ),
+      fontSize: dsTypoPrimitive.fontSizeCool,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeCool} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldSmall: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeCold,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeCold,
-        dsTypoPrimitive.lineHeightGelid
-      ),
+      fontSize: dsTypoPrimitive.fontSizeCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeCold} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldExtraSmall: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeBitterCold,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeBitterCold,
-        dsTypoPrimitive.lineHeightQuickFreeze
-      ),
+      fontSize: dsTypoPrimitive.fontSizeBitterCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     subheadingSemiboldLarge: {
       fontWeight: dsTypoPrimitive.fontWeightSemibold,
-      fontSize: dsTypoPrimitive.fontsizeFrigid,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrigid,
-        dsTypoPrimitive.lineHeightQuickFreeze
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrigid,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     subheadingSemiboldDefault: {
       fontWeight: dsTypoPrimitive.fontWeightSemibold,
-      fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrostbite,
-        dsTypoPrimitive.lineHeightQuickFreeze
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrostbite,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyRegularLarge: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeBitterCold,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeBitterCold,
-        dsTypoPrimitive.lineHeightGlacial
-      ),
+      fontSize: dsTypoPrimitive.fontSizeBitterCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGlacial})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     bodyRegularMedium: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeFrigid,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrigid,
-        dsTypoPrimitive.lineHeightGelid
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrigid,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyRegularSmall: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrostbite,
-        dsTypoPrimitive.lineHeightGelid
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrostbite,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
+    },
+    bodyBoldSmall: {
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeFrostbite,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
     bodyBoldMedium: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeFrigid,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrigid,
-        dsTypoPrimitive.lineHeightGelid
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrigid,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
+    },
+    bodyBoldLarge: {
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeBitterCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     supportBoldTextButton: {
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrostbite,
-        dsTypoPrimitive.lineHeightZero
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrostbite,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
       letterSpacing: dsTypoPrimitive.characterSpacingArctic,
       textTransform: dsTypoPrimitive.casingUppercase
     },
     supportRegularInfo: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeBlizzard,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrostbite,
-        dsTypoPrimitive.lineHeightQuickFreeze
-      ),
+      fontSize: dsTypoPrimitive.fontSizeBlizzard,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps,
       textTransform: dsTypoPrimitive.casingNone
     },
     supportRegularFootnote: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeIceAge,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeIceAge,
-        dsTypoPrimitive.lineHeightDeepfreeze
-      ),
+      fontSize: dsTypoPrimitive.fontSizeIceAge,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeIceAge} + ${dsTypoPrimitive.lineHeightDeepfreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
     supportRegularMetadata: {
       fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontsizeFrostbite,
-      lineHeight: calculateLinerHeight(
-        dsTypoPrimitive.fontsizeFrostbite,
-        dsTypoPrimitive.lineHeightZero
-      ),
+      fontSize: dsTypoPrimitive.fontSizeFrostbite,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps,
       textTransform: dsTypoPrimitive.casingUppercase
     }
@@ -197,25 +164,19 @@ export default function getTypography (fontFamilyName = '') {
     headingBoldMedium: dsTypo.headingBoldMedium,
     headingBoldSmall: dsTypo.headingBoldSmall,
     bodyBoldMedium: dsTypo.bodyBoldMedium,
+    bodyBoldLarge: dsTypo.bodyBoldLarge,
     headingBoldExtraSmall: dsTypo.headingBoldExtraSmall,
     subheadingSemiboldLarge: dsTypo.subheadingSemiboldLarge,
     subheadingSemiboldDefault: dsTypo.subheadingSemiboldDefault,
     bodyRegularLarge: dsTypo.bodyRegularLarge,
     bodyRegularMedium: dsTypo.bodyRegularMedium,
     bodyRegularSmall: dsTypo.bodyRegularSmall,
+    bodyBoldSmall: dsTypo.bodyBoldSmall,
     supportBoldTextButton: dsTypo.supportBoldTextButton,
     supportRegularInfo: dsTypo.supportRegularInfo,
     supportRegularFootnote: dsTypo.supportRegularFootnote,
     supportRegularMetadata: dsTypo.supportRegularMetadata
   }
 
-  return { dsTypo, typography, calculateLinerHeight }
-}
-
-function calculateLinerHeight (fontSizePX, lineHeightTokenPX) {
-  const fontSize = parseInt(fontSizePX.replace('px', ''), 10)
-  const lineHeightToken = parseInt(lineHeightTokenPX.replace('px', ''), 10)
-  const lineHeight = fontSize + lineHeightToken
-  const lineHeightPX = `${lineHeight}px`
-  return lineHeightPX
+  return { dsTypo, typography }
 }
