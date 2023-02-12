@@ -1,7 +1,7 @@
 import * as webHttps from 'src/Configurations/WebHttp'
 
 const performHandshake = async () => {
-  const promises = Object.values(webHttps).map(handdshake)
+  const promises = Object.values(webHttps).map(handshake)
   const responses = await Promise.allSettled(promises)
   responses.forEach(response => {
     if (response.status === 'rejected') {
@@ -10,7 +10,7 @@ const performHandshake = async () => {
   })
 }
 
-const handdshake = async (webHttp) => {
+const handshake = async (webHttp) => {
   if (!webHttp) { return }
 
   const options = {
