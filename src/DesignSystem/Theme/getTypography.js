@@ -1,6 +1,9 @@
 export default function getTypography (fontFamilyName = '') {
+  const fontFamily = `"${fontFamilyName}", "Helvetica"`
+
   const dsTypoPrimitive = {
     primaryFont: fontFamilyName,
+    fontFamily,
 
     fontSizeScorched: '76px',
     fontSizeTorrid: '56px',
@@ -41,104 +44,214 @@ export default function getTypography (fontFamilyName = '') {
   }
 
   const dsTypoComposite = {
+    displayBoldLarge: {
+      fontFamily,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeTorrid,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeTorrid} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+    displayBoldMedium: {
+      fontFamily,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeBlazzing,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBlazzing} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+    displayBoldSmall: {
+      fontFamily,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeTropical,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeTropical} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+
+    displayBoldItalicLarge: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeTorrid,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeTorrid} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+    displayBoldItalicMedium: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeBlazzing,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBlazzing} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+    displayBoldItalicSmall: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeTropical,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeTropical} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+
     headingBoldExtraLarge: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeWarm,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeWarm} + ${dsTypoPrimitive.lineHeightIceAge})`
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeWarm} + ${dsTypoPrimitive.lineHeightIceAge})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
     },
     headingBoldLarge: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeMild,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeMild} + ${dsTypoPrimitive.lineHeightGlacial})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingZero
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldMedium: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeCool,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeCool} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldSmall: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeCold,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeCold} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     headingBoldExtraSmall: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeBitterCold,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     subheadingSemiboldLarge: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightSemibold,
       fontSize: dsTypoPrimitive.fontSizeFrigid,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush,
+      textTransform: dsTypoPrimitive.casingUppercase
     },
     subheadingSemiboldDefault: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightSemibold,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush,
+      textTransform: dsTypoPrimitive.casingUppercase
     },
+
+    headingBoldItalicExtraLarge: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeWarm,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeWarm} + ${dsTypoPrimitive.lineHeightIceAge})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingZero
+    },
+    headingBoldItalicLarge: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeMild,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeMild} + ${dsTypoPrimitive.lineHeightGlacial})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
+    },
+    headingBoldItalicMedium: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeCool,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeCool} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
+    },
+    headingBoldItalicSmall: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeCold} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
+    },
+    headingBoldItalicExtraSmall: {
+      fontFamily,
+      fontStyle: 'italic',
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeBitterCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
+    },
+
     bodyRegularLarge: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeBitterCold,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGlacial})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHimalayas
     },
     bodyRegularMedium: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeFrigid,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyRegularSmall: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingAlps
     },
-    bodyBoldSmall: {
+
+    bodyBoldLarge: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontSizeFrostbite,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingAlps
+      fontSize: dsTypoPrimitive.fontSizeBitterCold,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGlacial})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
     bodyBoldMedium: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeFrigid,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrigid} + ${dsTypoPrimitive.lineHeightGelid})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingAlps
-    },
-    bodyBoldLarge: {
-      fontWeight: dsTypoPrimitive.fontWeightBold,
-      fontSize: dsTypoPrimitive.fontSizeBitterCold,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeBitterCold} + ${dsTypoPrimitive.lineHeightGelid})`,
       letterSpacing: dsTypoPrimitive.characterSpacingHindukush
     },
+    bodyBoldSmall: {
+      fontFamily,
+      fontWeight: dsTypoPrimitive.fontWeightBold,
+      fontSize: dsTypoPrimitive.fontSizeFrostbite,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightGelid})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
+    },
+
+    supportRegularInfo: {
+      fontFamily,
+      fontWeight: dsTypoPrimitive.fontWeightRegular,
+      fontSize: dsTypoPrimitive.fontSizeBlizzard,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeBlizzard} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
+    },
+    supportRegularFootnote: {
+      fontFamily,
+      fontWeight: dsTypoPrimitive.fontWeightRegular,
+      fontSize: dsTypoPrimitive.fontSizeIceAge,
+      lineHeight: `calc(${dsTypoPrimitive.fontSizeIceAge} + ${dsTypoPrimitive.lineHeightDeepfreeze})`,
+      letterSpacing: dsTypoPrimitive.characterSpacingAlps
+    },
     supportBoldTextButton: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightBold,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
       letterSpacing: dsTypoPrimitive.characterSpacingArctic,
       textTransform: dsTypoPrimitive.casingUppercase
     },
-    supportRegularInfo: {
-      fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontSizeBlizzard,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightQuickFreeze})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingAlps,
-      textTransform: dsTypoPrimitive.casingNone
-    },
-    supportRegularFootnote: {
-      fontWeight: dsTypoPrimitive.fontWeightRegular,
-      fontSize: dsTypoPrimitive.fontSizeIceAge,
-      lineHeight: `calc(${dsTypoPrimitive.fontSizeIceAge} + ${dsTypoPrimitive.lineHeightDeepfreeze})`,
-      letterSpacing: dsTypoPrimitive.characterSpacingAlps
-    },
     supportRegularMetadata: {
+      fontFamily,
       fontWeight: dsTypoPrimitive.fontWeightRegular,
       fontSize: dsTypoPrimitive.fontSizeFrostbite,
       lineHeight: `calc(${dsTypoPrimitive.fontSizeFrostbite} + ${dsTypoPrimitive.lineHeightZero})`,
@@ -155,26 +268,44 @@ export default function getTypography (fontFamilyName = '') {
   const typography = {
     htmlFontSize: 16,
     fontSize: 14,
-    fontFamily: `"${dsTypo.primaryFont}", "Helvetica"`,
+    fontFamily,
     fontWeightRegular: dsTypo.fontWeightRegular,
     fontWeightMedium: dsTypo.fontWeightMedium,
     fontWeightBold: dsTypo.fontWeightBold,
+
+    displayBoldLarge: dsTypo.displayBoldLarge,
+    displayBoldMedium: dsTypo.displayBoldMedium,
+    displayBoldSmall: dsTypo.displayBoldSmall,
+
+    displayBoldItalicLarge: dsTypo.displayBoldItalicLarge,
+    displayBoldItalicMedium: dsTypo.displayBoldItalicMedium,
+    displayBoldItalicSmall: dsTypo.displayBoldItalicSmall,
+
     headingBoldExtraLarge: dsTypo.headingBoldExtraLarge,
     headingBoldLarge: dsTypo.headingBoldLarge,
     headingBoldMedium: dsTypo.headingBoldMedium,
     headingBoldSmall: dsTypo.headingBoldSmall,
-    bodyBoldMedium: dsTypo.bodyBoldMedium,
-    bodyBoldLarge: dsTypo.bodyBoldLarge,
     headingBoldExtraSmall: dsTypo.headingBoldExtraSmall,
     subheadingSemiboldLarge: dsTypo.subheadingSemiboldLarge,
     subheadingSemiboldDefault: dsTypo.subheadingSemiboldDefault,
+
+    headingBoldItalicExtraLarge: dsTypo.headingBoldItalicExtraLarge,
+    headingBoldItalicLarge: dsTypo.headingBoldItalicLarge,
+    headingBoldItalicMedium: dsTypo.headingBoldItalicMedium,
+    headingBoldItalicSmall: dsTypo.headingBoldItalicSmall,
+    headingBoldItalicExtraSmall: dsTypo.headingBoldItalicExtraSmall,
+
     bodyRegularLarge: dsTypo.bodyRegularLarge,
     bodyRegularMedium: dsTypo.bodyRegularMedium,
     bodyRegularSmall: dsTypo.bodyRegularSmall,
+
+    bodyBoldLarge: dsTypo.bodyBoldLarge,
+    bodyBoldMedium: dsTypo.bodyBoldMedium,
     bodyBoldSmall: dsTypo.bodyBoldSmall,
-    supportBoldTextButton: dsTypo.supportBoldTextButton,
+
     supportRegularInfo: dsTypo.supportRegularInfo,
     supportRegularFootnote: dsTypo.supportRegularFootnote,
+    supportBoldTextButton: dsTypo.supportBoldTextButton,
     supportRegularMetadata: dsTypo.supportRegularMetadata
   }
 
