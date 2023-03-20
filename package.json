@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@am92/web-http": "^0.0.8",
+    "@am92/web-http": "^0.0.11",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/base": "5.0.0-alpha.113",
